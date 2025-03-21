@@ -2,9 +2,6 @@
 What is used in this project?
 Riverpod Used for state management
 
-Freezed Code generation
-
-Dartz Functional Programming Either<Left,Right>
 
 Auto Route Navigation package that uses code generation to simplify route setup
 
