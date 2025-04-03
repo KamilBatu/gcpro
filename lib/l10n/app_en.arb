@@ -1,0 +1,57 @@
+{
+    "@@locale": "en",
+    "appTitle": "Bita",
+    "@appTitle": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "welcomeMessage": "Welcome Back!",
+    "@welcomeMessage": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "pleaseEnterYourCredentials": "Please enter your credentials",
+    "@pleaseEnterYourCredentials": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "login": "Log In",
+    "@login": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "continueWithGoogle": "Continue with Google",
+    "@continueWithGoogle": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "dontHaveAnAccount": "Don't have an account?",
+    "@dontHaveAnAccount": {
+        "type": "text",
+        "placeholders": {}
+    },
+    "signUp": "Sign Up",
+    "@signUp": {},
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {},
+    "signupTitle": "Let's Sign you up",
+    "@signupTitle": {},
+    "signupDescription": "Please enter the details below to continue.",
+    "@signupDescription": {},
+    "confirmPassword": "Confirm Password",
+    "@confirmPassword": {},
+    "alreadyHaveAccount": "Already have a account?  ",
+    "@alreadyHaveAccount": {},
+    "password": "Password",
+    "@password": {},
+    "or": "or",
+    "@or": {},
+    "enterYourEmailAddress": "Enter your email address",
+    "@enterYourEmailAddress": {},
+    "enterYourPhoneNumber": "Enter your phone number",
+    "@enterYourPhoneNumber": {},
+    "email": "Email",
+    "@email": {},
+    "phoneNumber": "Phone",
+    "@phoneNumber": {}
+}
