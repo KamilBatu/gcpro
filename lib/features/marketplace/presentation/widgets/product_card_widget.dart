@@ -90,7 +90,7 @@ class ProductCardWidget extends StatelessWidget {
             style: priceStyle ?? Theme.of(context).textTheme.bodySmall,
           ),
           Text(
-            "bole,adama",
+            "bole,Adama",
             style: locationStyle ??
                 Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: Theme.of(context).colorScheme.primary,

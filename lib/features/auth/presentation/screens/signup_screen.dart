@@ -27,6 +27,7 @@ class SignupScreen extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [SignupForm()],
+            //
           ),
         ),
       ),

@@ -18,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     this.prefix,
     this.disabled = false,
     this.onChanged,
+    required bool obscureText,
   });
   final String hintText;
   final bool date;

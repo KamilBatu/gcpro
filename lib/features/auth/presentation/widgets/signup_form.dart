@@ -31,6 +31,7 @@ class SignupFormState extends ConsumerState<SignupForm> {
     if (!errorMessages.contains(error)) {
       setState(() {
         errorMessages.add(error);
+        // //error
       });
     }
   }

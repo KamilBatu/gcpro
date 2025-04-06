@@ -9,7 +9,6 @@ void main() => mainCommon(AppEnvironment.DEV);
 Future<void> mainCommon(AppEnvironment environment) async {
   WidgetsFlutterBinding.ensureInitialized();
   EnvInfo.initialize(environment);
-
   runApp(
     ProviderScope(
       key: const ValueKey('provider_scope'),

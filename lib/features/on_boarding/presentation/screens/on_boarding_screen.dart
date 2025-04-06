@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:gcpro/features/auth/presentation/screens/test_auth_screen/register_screen_test.dart';
 import 'package:gcpro/features/on_boarding/presentation/providers/onboarding_provider.dart';
 import 'package:gcpro/features/on_boarding/presentation/screens/board_screen.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
@@ -34,7 +35,9 @@ class OnboardingScreen extends ConsumerWidget {
               ref
                   .read(secureStorageServiceProvider)
                   .set(FIRST_TIME_KEY, 'false');
-              goTo(const DashboardRoute(), context);
+              goTo(const SignupRoute(), context);
+              // Navigator.of(context).push(
+              //     MaterialPageRoute(builder: (context) => SignupScreenTest()));
             },
             child: const Text(
               'Skip',
@@ -132,7 +135,9 @@ class NextButton extends ConsumerWidget {
                 ref
                     .read(secureStorageServiceProvider)
                     .set(FIRST_TIME_KEY, 'false');
-                goTo(const DashboardRoute(), context);
+                goTo(const SignupRoute(), context);
+                // Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) => SignupScreenTest()));
                 return;
               }
 

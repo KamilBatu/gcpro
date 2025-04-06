@@ -97,6 +97,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Icons.batch_prediction_rounded,
                   size: kIconSizeSmall,
                 ),
+                obscureText: false,
               ),
               const Gap(24),
               CustomTextField(
@@ -108,6 +109,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Icons.calendar_month_rounded,
                   size: kIconSizeSmall,
                 ),
+                obscureText: false,
               ),
               const Gap(24),
               CustomTextField(
@@ -126,6 +128,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                             .toStringAsFixed(2);
                   }
                 },
+                obscureText: false,
               ),
               const Gap(24),
               Row(
@@ -157,6 +160,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                               );
                         }
                       },
+                      obscureText: false,
                     ),
                   ),
                   const Gap(12),
@@ -178,6 +182,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                               .toStringAsFixed(2);
                         }
                       },
+                      obscureText: false,
                     ),
                   ),
                 ],
@@ -192,6 +197,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Icons.inventory_2_rounded,
                   size: kIconSizeSmall,
                 ),
+                obscureText: false,
               ),
               const Gap(32),
               BottomSheetDropdown(

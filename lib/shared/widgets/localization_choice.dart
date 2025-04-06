@@ -10,7 +10,8 @@ class ChooseLocalization extends ConsumerWidget {
   static const Map<String, String> supportedLocales = {
     'en': 'English',
     'am': 'Amharic',
-    'om': 'Afan Oromo',
+
+    // 'om': 'Afan Oromo',
   };
 
   @override

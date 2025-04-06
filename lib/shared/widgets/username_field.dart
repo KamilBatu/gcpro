@@ -25,9 +25,12 @@ class UsernameTextField extends ConsumerWidget {
     final usernameType = ref.watch(usernameTypeProvider);
 
     String? validateUsername(String? value) {
+      // Debug print to confirm input
+      print('Validating input: "$value"');
+
       if (value == null || value.isEmpty) {
         addError("${usernameType.name} cannot be empty.");
-        return "";
+        return "Field cannot be empty.";
       } else {
         removeError("${usernameType.name} cannot be empty.");
       }
@@ -37,29 +40,32 @@ class UsernameTextField extends ConsumerWidget {
             RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
         if (!emailRegex.hasMatch(value)) {
           addError("Invalid email address.");
-          return "";
+          return "Invalid email format.";
         } else {
           removeError("Invalid email address.");
         }
       } else if (usernameType == UsernameType.phone) {
-        final phoneRegex =
-            RegExp(r"^[79]\d{8}$"); // 9 or 7 followed by 8 digits
-        if (!phoneRegex.hasMatch(value)) {
-          removeError("Invalid email address.");
+        // Strip country code if present (e.g., +251)
+        String phoneValue = value.replaceAll(RegExp(r'^\+\d+'), '');
+        print('Stripped phone value: "$phoneValue"');
+
+        // Regex for 9 digits starting with 7 or 9
+        final phoneRegex = RegExp(r"^[79]\d{8}$");
+        if (!phoneRegex.hasMatch(phoneValue)) {
+          removeError("Invalid email address."); // Clean up unrelated error
           addError(
-            "Invalid phone number. Must start with 9 or 7 and have 9 digits.",
-          );
-          return "";
+              "Invalid phone number. Must start with 9 or 7 and be 9 digits.");
+          return "Invalid phone number.";
         } else {
           removeError(
-            "Invalid phone number. Must start with 9 or 7 and have 9 digits.",
-          );
+              "Invalid phone number. Must start with 9 or 7 and be 9 digits.");
         }
       }
 
+      // Minimum length check (optional, keeping it for consistency)
       if (value.length < 3) {
         addError("Username must be at least 3 characters long.");
-        return "";
+        return "Too short.";
       } else {
         removeError("Username must be at least 3 characters long.");
       }
@@ -82,7 +88,8 @@ class UsernameTextField extends ConsumerWidget {
           CustomTextField(
             hintText: usernameType == UsernameType.email
                 ? AppLocalizations.of(context)!.enterYourEmailAddress
-                : AppLocalizations.of(context)!.enterYourPhoneNumber,
+                : AppLocalizations.of(context)!.enterYourPhoneNumber +
+                    " (e.g., 914053340)",
             lableText: "",
             height: 5,
             controller: controller,
@@ -98,6 +105,10 @@ class UsernameTextField extends ConsumerWidget {
                     favorite: const ['+251', 'ET'],
                     showFlagDialog: true,
                     showFlag: false,
+                    onChanged: (code) {
+                      // Optional: Update controller if needed, but we'll validate without it
+                      print('Country code selected: ${code.dialCode}');
+                    },
                   )
                 : null,
             suffixIcon: Icon(
@@ -105,6 +116,7 @@ class UsernameTextField extends ConsumerWidget {
               size: 15,
             ),
             validator: validateUsername,
+            obscureText: false,
           ),
         ],
       ),
@@ -148,7 +160,6 @@ class ChooseUsernameType extends ConsumerWidget {
           onTap: (index) {
             final usernameType = ref.read(usernameTypeProvider);
             removeError("${usernameType.name} cannot be empty.");
-
             ref.read(usernameTypeProvider.notifier).update(
                   (state) =>
                       index == 0 ? UsernameType.email : UsernameType.phone,
