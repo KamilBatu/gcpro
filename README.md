@@ -1,6 +1,16 @@
+![Coverage](coverage_badge.svg)
 
-# Gc-pro
+# Bita-Mobile
 
+### What is used in this project?
+
+- **Riverpod**
+  Used for state management
+- **Freezed**
+  Code generation
+
+- **Dartz**
+  Functional Programming `Either<Left,Right>`
 - **Auto Route**
   Navigation package that uses code generation to simplify route setup
 - **Dio**
@@ -8,7 +18,7 @@
 - **Shared Preferences**
   Persistent storage for simple data
 - **Flutter and Dart**
-  And obviously flutter and dart 
+  And obviously flutter and dart 😅
 
 ### Project Description
 

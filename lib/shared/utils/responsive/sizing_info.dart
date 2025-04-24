@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
 import 'package:gcpro/shared/globals.dart';
+import 'package:flutter/widgets.dart';
 
 class SizingInformation {
   SizingInformation({

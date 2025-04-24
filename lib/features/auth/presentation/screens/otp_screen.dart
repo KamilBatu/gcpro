@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
+import 'package:gcpro/gen/l10n.dart';
+
 import 'package:gcpro/shared/globals.dart';
 
 import 'package:gcpro/shared/widgets/localization_choice.dart';
@@ -59,9 +61,8 @@ class OTPScreen extends ConsumerWidget {
         titleSpacing: 0,
         backgroundColor: Theme.of(context).colorScheme.surface,
         leadingWidth: 48,
-        actions: const [
-          ChooseLocalization(),
-          Gap(12),
+        actions: [
+          // ChooseLocalization(),
         ],
         leading: IconButton(
           icon: Icon(
@@ -81,7 +82,7 @@ class OTPScreen extends ConsumerWidget {
               children: [
                 const Gap(16),
                 Text(
-                  "Verification",
+                  AppLocalizations.of(context).verification,
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
@@ -89,7 +90,7 @@ class OTPScreen extends ConsumerWidget {
                 ),
                 const Gap(16),
                 Text(
-                  "we've send you the verification code on  ${email ? "email" : "phone"}",
+                  '${AppLocalizations.of(context).we_send_a_code_to}${email ? AppLocalizations.of(context).email : AppLocalizations.of(context).phone} $username',
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,
@@ -242,7 +243,7 @@ class OTPFormState extends ConsumerState<OTPForm> {
             children: [
               if (secondsRemaining > 0)
                 Text(
-                  "Re-send Code in ",
+                  '${AppLocalizations.of(context).re_send_a_code_in} ',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),

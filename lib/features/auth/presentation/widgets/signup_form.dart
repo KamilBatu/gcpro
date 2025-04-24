@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
 import 'package:gcpro/features/auth/presentation/screens/orientations/signup_mobile.dart';
+import 'package:gcpro/gen/l10n.dart';
+
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:gcpro/shared/domain/providers/username_type_provider.dart';
 import 'package:gcpro/shared/globals.dart';
@@ -31,7 +33,6 @@ class SignupFormState extends ConsumerState<SignupForm> {
     if (!errorMessages.contains(error)) {
       setState(() {
         errorMessages.add(error);
-        // //error
       });
     }
   }
@@ -46,36 +47,57 @@ class SignupFormState extends ConsumerState<SignupForm> {
 
   String? validateConfirmPassword(String? password) {
     if (password == null) {
-      addError("Password must be at least 8 characters long");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
       return "";
     } else {
-      removeError("Password must be at least 8 characters long");
+      removeError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
     if (password.isEmpty) {
-      addError("Password must be at least 8 characters long");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
       return "";
     } else {
-      removeError("Password must be at least 8 characters long");
+      removeError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
     if (password.length < 8) {
-      addError("Password must be at least 8 characters long");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
       return "";
     } else {
-      removeError("Password must be at least 8 characters long");
+      removeError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
 
     if (password != passwordController.text) {
-      addError("Passwords do not match");
+      addError(AppLocalizations.of(context).passwords_do_not_match);
       return "";
     } else {
-      removeError("Passwords do not match");
+      removeError(AppLocalizations.of(context).passwords_do_not_match);
     }
     return null;
   }
 
   void onSignup() {
     if (passwordController.text.isEmpty) {
-      addError("Password must be at least 8 characters long");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
 
     if (formkey.currentState == null) return;
@@ -87,7 +109,7 @@ class SignupFormState extends ConsumerState<SignupForm> {
     ref.read(authNotifierProvider.notifier).otpSend(
           value: usernameController.text,
           otpType: OTPType.ACCOUNT_VERIFICATION,
-          identifier: "phone",
+          identifier: AppLocalizations.of(context).phone,
         );
   }
 
@@ -144,15 +166,13 @@ class SignupFormState extends ConsumerState<SignupForm> {
                 .then((value) {
               if (value == null) {
                 messenger.showSnackBar(
-                  const SnackBar(
+                  SnackBar(
                     backgroundColor: Colors.red,
                     content: Text(
-                      "OTP verification failed",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      AppLocalizations.of(context).otp_verification_failed,
+                      style: const TextStyle(color: Colors.white),
                     ),
-                    duration: Duration(milliseconds: SNACK_BAR_DURATION),
+                    duration: const Duration(milliseconds: SNACK_BAR_DURATION),
                   ),
                 );
               }

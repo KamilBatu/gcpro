@@ -9,6 +9,8 @@ class SuppliersScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }

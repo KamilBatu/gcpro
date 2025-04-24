@@ -1,6 +1,6 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AccountSelectionDropdown extends StatefulWidget {

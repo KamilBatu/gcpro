@@ -1,3 +1,4 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:flutter/material.dart';
 
 // Then create a parent widget to manage the selected state
@@ -64,9 +65,9 @@ class CategoryItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           // Optional: Add a subtle background when selected
-          color: isSelected ? Colors.grey[200] : null,
+          color: isSelected ? kColorWhite : null,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -74,15 +75,14 @@ class CategoryItem extends StatelessWidget {
             Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontWeight:
-                        isSelected ? FontWeight.bold : FontWeight.normal,
-                  ),
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                  color: isSelected ? kColorSchemeSeed : kColorBlack),
             ),
             if (isSelected) // Add underline only when selected
               Container(
                 height: 2,
                 width: 20,
-                color: Colors.black, // You can adjust the color
+                color: kColorSchemeSeed,
                 margin: const EdgeInsets.only(top: 2),
               ),
           ],

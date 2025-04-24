@@ -1,15 +1,13 @@
-import 'package:gcpro_design_system/tokens/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class QuantitySelector extends StatelessWidget {
   final double? width;
   final double? height;
-  final WidgetRef ref;
+  final int quantity;
   final VoidCallback onAdd;
   final VoidCallback onRemove;
-  final TextEditingController controller;
-  final StateProvider<int> numberProvider;
+  // ignore: inference_failure_on_function_return_type
+  final Function(int) onQuantityChanged;
   final Color borderColor;
   final double borderRadius;
   final Color textColor;
@@ -22,14 +20,13 @@ class QuantitySelector extends StatelessWidget {
     super.key,
     this.width,
     this.height,
-    required this.ref,
+    required this.quantity,
     required this.onAdd,
     required this.onRemove,
-    required this.controller,
-    required this.numberProvider,
-    this.borderColor = kColorBlack25,
+    required this.onQuantityChanged,
+    this.borderColor = Colors.black26,
     this.borderRadius = 25,
-    this.textColor = kColorBlack50,
+    this.textColor = Colors.black54,
     this.textSize = 14,
     this.iconSize = 18,
     this.iconColor = Colors.black,
@@ -40,38 +37,26 @@ class QuantitySelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      child: Consumer(
-        builder: (context, ref, child) {
-          final quantity = ref.watch(numberProvider);
-
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (controller.text != quantity.toString()) {
-              controller.text = quantity.toString();
-            }
-          });
-
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                width: width ?? MediaQuery.sizeOf(context).width * 0.17,
-                height: height ?? MediaQuery.sizeOf(context).height * 0.035,
-                decoration: BoxDecoration(
-                  border: Border.all(color: borderColor),
-                  borderRadius: BorderRadius.circular(borderRadius),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _buildRemoveButton(),
-                    _buildQuantityDisplay(context, quantity),
-                    _buildAddButton(),
-                  ],
-                ),
-              ),
-            ],
-          );
-        },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            width: width ?? MediaQuery.sizeOf(context).width * 0.17,
+            height: height ?? MediaQuery.sizeOf(context).height * 0.035,
+            decoration: BoxDecoration(
+              border: Border.all(color: borderColor),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildRemoveButton(),
+                _buildQuantityDisplay(context),
+                _buildAddButton(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -87,7 +72,7 @@ class QuantitySelector extends StatelessWidget {
     );
   }
 
-  Widget _buildQuantityDisplay(BuildContext context, int quantity) {
+  Widget _buildQuantityDisplay(BuildContext context) {
     return GestureDetector(
       onTap: () => _showQuantityDialog(context),
       child: Text(
@@ -113,7 +98,8 @@ class QuantitySelector extends StatelessWidget {
   }
 
   void _showQuantityDialog(BuildContext context) {
-    // ignore: inference_failure_on_function_invocation
+    final controller = TextEditingController(text: quantity.toString());
+
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -125,10 +111,6 @@ class QuantitySelector extends StatelessWidget {
             decoration: const InputDecoration(
               hintText: 'Enter quantity',
             ),
-            onSubmitted: (value) {
-              _updateQuantity(value);
-              Navigator.of(context).pop();
-            },
           ),
           actions: [
             TextButton(
@@ -137,7 +119,10 @@ class QuantitySelector extends StatelessWidget {
               ),
               child: const Text('OK'),
               onPressed: () {
-                _updateQuantity(controller.text);
+                final newQuantity = int.tryParse(controller.text) ?? quantity;
+                if (newQuantity >= 0) {
+                  onQuantityChanged(newQuantity);
+                }
                 Navigator.of(context).pop();
               },
             ),
@@ -145,10 +130,5 @@ class QuantitySelector extends StatelessWidget {
         );
       },
     );
-  }
-
-  void _updateQuantity(String value) {
-    final intValue = int.tryParse(value) ?? 1;
-    ref.read(numberProvider.notifier).state = intValue;
   }
 }

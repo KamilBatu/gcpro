@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:gcpro/services/token_cache_service/domain/providers/token_cache_provider.dart';
+import 'package:gcpro/services/services_provider.dart';
 import 'package:gcpro/shared/widgets/network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
-import 'package:gcpro/services/token_cache_service/domain/providers/token_cache_provider.dart';
+
+import 'package:gcpro/services/services_provider.dart';
 import 'package:gcpro/services/token_cache_service/domain/repositories/token_cache_repository.dart';
 import 'package:gcpro/shared/globals.dart';
 import 'package:cached_network_image/cached_network_image.dart';

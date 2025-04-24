@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:gcpro_design_system/widgets/button_filled.dart';
 import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/l10n/string_hardcoded.dart';
 import 'package:gcpro/shared/globals.dart';
 import 'package:gcpro/shared/widgets/username_field.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +50,7 @@ class ForgetPasswordScreenState extends ConsumerState<ForgetPasswordScreen> {
         backgroundColor: Theme.of(context).colorScheme.surface,
         centerTitle: false,
         title: Text(
-          "Forget password",
+          AppLocalizations.of(context).forget_password,
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
@@ -79,19 +81,21 @@ class ForgetPasswordScreenState extends ConsumerState<ForgetPasswordScreen> {
                   ),
                   const Gap(16),
                   Text(
-                    "Please enter your username to reset your password",
+                    "Please enter your username to reset your password"
+                        .hardcoded,
+                    // AppLocalizations.of(context).please_enter_your_username_to_reset_your_password,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
                   ),
                   const Gap(32),
                   BFilledButton(
-                    text: "Send",
+                    text: AppLocalizations.of(context).send,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         ref.read(authNotifierProvider.notifier).otpSend(
                               value: _usenameController.text,
-                              identifier: "email",
+                              identifier: AppLocalizations.of(context).email,
                               otpType: OTPType.TWO_FACTOR_AUTHENTICATION,
                             );
                       }

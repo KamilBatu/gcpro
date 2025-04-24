@@ -1,14 +1,14 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:gcpro_design_system/tokens/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     required this.hintText,
     required this.lableText,
     required this.controller,
-    required this.suffixIcon,
+    this.suffixIcon,
     super.key,
     this.validator,
     this.date = false,
@@ -18,7 +18,6 @@ class CustomTextField extends StatelessWidget {
     this.prefix,
     this.disabled = false,
     this.onChanged,
-    required bool obscureText,
   });
   final String hintText;
   final bool date;
@@ -28,7 +27,7 @@ class CustomTextField extends StatelessWidget {
   final String lableText;
   final Widget? prefix;
   final double height;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
   final TextEditingController controller;
   final String? Function(String?)? validator;
   final ValueChanged<String>? onChanged;

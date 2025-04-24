@@ -1,4 +1,6 @@
 import 'package:gcpro_design_system/tokens/tokens.dart';
+import 'package:gcpro/gen/l10n.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -32,17 +34,20 @@ class Item extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.surface,
           showDragHandle: true,
           elevation: 10,
-          builder: (context) => InventoryDetailsContainer(
-            inventoryItem: InventoryItem(
-              productName: "Aspirin 500mg",
-              batchNumber: "BATCH-202403",
-              expiryDate: DateTime(2025, 6, 30),
-              purchasePrice: 8.99,
-              sellingPrice: 12.50,
-              stockQuantity: 500,
-              supplier: "MediSupply Ltd.",
-              dateReceived: DateTime(2024, 2, 10),
-              imageUrl: "https://fakeimg.pl/600x400",
+          builder: (context) => SizedBox(
+            height: 350,
+            child: InventoryDetailsContainer(
+              inventoryItem: InventoryItem(
+                productName: "Aspirin 500mg",
+                batchNumber: "BATCH-202403",
+                expiryDate: DateTime(2025, 6, 30),
+                purchasePrice: 8.99,
+                sellingPrice: 12.50,
+                stockQuantity: 500,
+                supplier: "MediSupply Ltd.",
+                dateReceived: DateTime(2024, 2, 10),
+                imageUrl: "https://fakeimg.pl/600x400",
+              ),
             ),
           ),
         );
@@ -143,13 +148,16 @@ class InventoryDetailsContainer extends StatelessWidget {
         children: [
           Text(
             inventoryItem.productName,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: kColorSchemeSeed,
                 ),
           ),
           const Gap(10),
-          InventoryInfo(inventoryItem: inventoryItem),
+          SizedBox(
+            height: 250,
+            child: InventoryInfo(inventoryItem: inventoryItem),
+          ),
         ],
       ),
     );
@@ -167,24 +175,27 @@ class InventoryInfo extends StatelessWidget {
       children: [
         DetailRow(title: "Batch Number", value: inventoryItem.batchNumber),
         DetailRow(
-          title: "Expiry Date",
+          title: AppLocalizations.of(context).expiry_date,
           value: "${inventoryItem.expiryDate.toLocal()}".split(' ')[0],
         ),
         DetailRow(
-          title: "Purchase Price",
+          title: AppLocalizations.of(context).purchase_price,
           value: "\$${inventoryItem.purchasePrice.toStringAsFixed(2)}",
         ),
         DetailRow(
-          title: "Selling Price",
+          title: AppLocalizations.of(context).selling_price,
           value: "\$${inventoryItem.sellingPrice.toStringAsFixed(2)}",
         ),
         DetailRow(
-          title: "Stock Quantity",
+          title: AppLocalizations.of(context).stock_quantity,
           value: inventoryItem.stockQuantity.toString(),
         ),
-        DetailRow(title: "Supplier", value: inventoryItem.supplier),
         DetailRow(
-          title: "Date Received",
+          title: AppLocalizations.of(context).supplier,
+          value: inventoryItem.supplier,
+        ),
+        DetailRow(
+          title: AppLocalizations.of(context).date_received,
           value: "${inventoryItem.dateReceived.toLocal()}".split(' ')[0],
         ),
       ],

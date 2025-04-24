@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:gcpro_design_system/tokens/colors.dart';
 
 const kGitUrl = "https://github.com/gumiapps/bita-mobile";
 const kIssueUrl = "$kGitUrl/issues";

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:gcpro_design_system/tokens/measurements.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -65,7 +66,19 @@ class BottomSheetDropdownState extends State<BottomSheetDropdown> {
               TextField(
                 decoration: const InputDecoration(
                   labelText: 'Search',
-                  prefixIcon: Icon(Icons.search),
+                  suffixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: kBorderRadius25,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: kBorderRadius25,
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: kBorderRadius25,
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  contentPadding: kPh20v10,
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -107,7 +120,7 @@ class BottomSheetDropdownState extends State<BottomSheetDropdown> {
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.add),
-                title: const Text("Add new item"),
+                title: Text(AppLocalizations.of(context).add_new_item),
                 onTap: () async {
                   Navigator.pop(context);
 
@@ -175,10 +188,11 @@ class BottomSheetDropdownState extends State<BottomSheetDropdown> {
                   CircleAvatar(
                     backgroundImage:
                         CachedNetworkImageProvider(selectedItem!.imageUrl),
+                    radius: 13,
                   )
                 else
                   const SizedBox(),
-                const SizedBox(width: 10),
+                const Gap(10),
                 Text(
                   selectedItem?.title ?? "",
                   style: TextStyle(
@@ -224,29 +238,35 @@ class AddItemPageState extends State<AddItemPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Add New Item")),
+      appBar: AppBar(title: Text(AppLocalizations.of(context).add_new_item)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: titleController,
-              decoration: const InputDecoration(labelText: "Title"),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context).title,
+              ),
             ),
             const SizedBox(height: 10),
             TextField(
               controller: subtitleController,
-              decoration: const InputDecoration(labelText: "Subtitle"),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context).subtitle,
+              ),
             ),
             const SizedBox(height: 10),
             TextField(
               controller: imageUrlController,
-              decoration: const InputDecoration(labelText: "Image URL"),
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context).image_url,
+              ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _saveItem,
-              child: const Text("Save"),
+              child: Text(AppLocalizations.of(context).save),
             ),
           ],
         ),

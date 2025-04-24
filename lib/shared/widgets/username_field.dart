@@ -1,10 +1,10 @@
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/shared/domain/providers/username_type_provider.dart';
+import 'package:gcpro/shared/widgets/text_field.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
-import 'package:gcpro/l10n/app_localizations.dart';
-import 'package:gcpro/shared/domain/providers/username_type_provider.dart';
-import 'package:gcpro/shared/widgets/text_field.dart';
 
 class UsernameTextField extends ConsumerWidget {
   const UsernameTextField({
@@ -25,12 +25,9 @@ class UsernameTextField extends ConsumerWidget {
     final usernameType = ref.watch(usernameTypeProvider);
 
     String? validateUsername(String? value) {
-      // Debug print to confirm input
-      print('Validating input: "$value"');
-
       if (value == null || value.isEmpty) {
         addError("${usernameType.name} cannot be empty.");
-        return "Field cannot be empty.";
+        return "";
       } else {
         removeError("${usernameType.name} cannot be empty.");
       }
@@ -40,32 +37,29 @@ class UsernameTextField extends ConsumerWidget {
             RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
         if (!emailRegex.hasMatch(value)) {
           addError("Invalid email address.");
-          return "Invalid email format.";
+          return "";
         } else {
           removeError("Invalid email address.");
         }
       } else if (usernameType == UsernameType.phone) {
-        // Strip country code if present (e.g., +251)
-        String phoneValue = value.replaceAll(RegExp(r'^\+\d+'), '');
-        print('Stripped phone value: "$phoneValue"');
-
-        // Regex for 9 digits starting with 7 or 9
-        final phoneRegex = RegExp(r"^[79]\d{8}$");
-        if (!phoneRegex.hasMatch(phoneValue)) {
-          removeError("Invalid email address."); // Clean up unrelated error
+        final phoneRegex =
+            RegExp(r"^[79]\d{8}$"); // 9 or 7 followed by 8 digits
+        if (!phoneRegex.hasMatch(value)) {
+          removeError("Invalid email address.");
           addError(
-              "Invalid phone number. Must start with 9 or 7 and be 9 digits.");
-          return "Invalid phone number.";
+            "Invalid phone number. Must start with 9 or 7 and have 9 digits.",
+          );
+          return "";
         } else {
           removeError(
-              "Invalid phone number. Must start with 9 or 7 and be 9 digits.");
+            "Invalid phone number. Must start with 9 or 7 and have 9 digits.",
+          );
         }
       }
 
-      // Minimum length check (optional, keeping it for consistency)
       if (value.length < 3) {
         addError("Username must be at least 3 characters long.");
-        return "Too short.";
+        return "";
       } else {
         removeError("Username must be at least 3 characters long.");
       }
@@ -87,9 +81,8 @@ class UsernameTextField extends ConsumerWidget {
           const Gap(12),
           CustomTextField(
             hintText: usernameType == UsernameType.email
-                ? AppLocalizations.of(context)!.enterYourEmailAddress
-                : AppLocalizations.of(context)!.enterYourPhoneNumber +
-                    " (e.g., 914053340)",
+                ? AppLocalizations.of(context).enterYourEmailAddress
+                : AppLocalizations.of(context).enterYourPhoneNumber,
             lableText: "",
             height: 5,
             controller: controller,
@@ -105,10 +98,6 @@ class UsernameTextField extends ConsumerWidget {
                     favorite: const ['+251', 'ET'],
                     showFlagDialog: true,
                     showFlag: false,
-                    onChanged: (code) {
-                      // Optional: Update controller if needed, but we'll validate without it
-                      print('Country code selected: ${code.dialCode}');
-                    },
                   )
                 : null,
             suffixIcon: Icon(
@@ -116,7 +105,6 @@ class UsernameTextField extends ConsumerWidget {
               size: 15,
             ),
             validator: validateUsername,
-            obscureText: false,
           ),
         ],
       ),
@@ -154,12 +142,13 @@ class ChooseUsernameType extends ConsumerWidget {
                 fontSize: 12,
               ),
           tabs: [
-            Tab(height: 22, text: AppLocalizations.of(context)!.email),
-            Tab(height: 22, text: AppLocalizations.of(context)!.phoneNumber),
+            Tab(height: 22, text: AppLocalizations.of(context).email),
+            Tab(height: 22, text: AppLocalizations.of(context).phoneNumber),
           ],
           onTap: (index) {
             final usernameType = ref.read(usernameTypeProvider);
             removeError("${usernameType.name} cannot be empty.");
+
             ref.read(usernameTypeProvider.notifier).update(
                   (state) =>
                       index == 0 ? UsernameType.email : UsernameType.phone,

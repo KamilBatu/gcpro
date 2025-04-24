@@ -1,0 +1,497 @@
+{
+  "@@locale": "om",
+  "account_security": "Herrega",
+  "@account_security": {},
+  "added": "itti dabalame .",
+  "@added": {
+    "type": "text"
+  },
+  "add_item": "Meeshaa itti dabali .",
+  "@add_item": {
+    "type": "text"
+  },
+  "add_new_business": "Daldala haaraa itti dabali",
+  "@add_new_business": {},
+  "add_new_item": "Meeshaa haaraa itti dabali .",
+  "@add_new_item": {
+    "type": "text"
+  },
+  "address": "Teessoo",
+  "@address": {},
+  "all": "hunda",
+  "@all": {
+    "type": "text"
+  },
+  "alreadyHaveAccount": "Duraanis akkaawuntii qabduu?  ",
+  "@alreadyHaveAccount": {},
+  "api_access": "API argachuu .",
+  "@api_access": {},
+  "appTitle": "Bitaa",
+  "@appTitle": {
+    "type": "text"
+  },
+  "app_version": "App version .",
+  "@app_version": {},
+  "auto_save_changes": "Jijjiirama ofumaan qusachuu .",
+  "@auto_save_changes": {},
+  "backup_restore": "Duubbee .",
+  "@backup_restore": {},
+  "barcode_scanner": "Iskaanara barkoodii .",
+  "@barcode_scanner": {},
+  "batch_editing": "Gulaallii Batch .",
+  "@batch_editing": {},
+  "batch_number": "Lakkoofsa Batch .",
+  "@batch_number": {},
+  "brand": "Maqaa oomishaa",
+  "@brand": {
+    "type": "text"
+  },
+  "businesses_available": "Dhaabbileen daldalaa ni argamu .",
+  "@businesses_available": {},
+  "business_name": "Maqaa Daldalaa .",
+  "@business_name": {},
+  "business_profiles": "Profaayilii daldalaa .",
+  "@business_profiles": {},
+  "business_type": "Gosa Daldalaa .",
+  "@business_type": {},
+  "by_name": "Maqaatiin .",
+  "@by_name": {},
+  "category": "Ramaddii",
+  "@category": {
+    "type": "text"
+  },
+  "change_password": "Jecha icciitii jijjiiri .",
+  "@change_password": {
+    "type": "text"
+  },
+  "check": "Sakatta'uu",
+  "@check": {
+    "type": "text"
+  },
+  "check_out": "Mee ilaalaa",
+  "@check_out": {
+    "type": "text"
+  },
+  "cloud_sync": "Duumeessa Walsimsiisaa .",
+  "@cloud_sync": {},
+  "confirm_password": "Jecha icciitii mirkaneessuu .",
+  "@confirm_password": {
+    "type": "text"
+  },
+  "confirmPassword": "Password Mirkaneessi",
+  "@confirmPassword": {},
+  "connect_with_suppliers": "Dhiyeessitoota waliin wal qunnamsiisaa .",
+  "@connect_with_suppliers": {
+    "type": "text"
+  },
+  "contact_number": "Lakkoofsa quunnamtii .",
+  "@contact_number": {},
+  "contact_support": "Deeggarsa qunnamaa",
+  "@contact_support": {},
+  "continueWithGoogle": "Google waliin itti fufaa",
+  "@continueWithGoogle": {
+    "type": "text"
+  },
+  "create_a_new_business_profile": "Profaayilii daldalaa haaraa uumuu .",
+  "@create_a_new_business_profile": {},
+  "csv_excel_or_pdf": "CSV, Excel, ykn PDF .",
+  "@csv_excel_or_pdf": {},
+  "currency": "Maallaqa",
+  "@currency": {},
+  "current_business": "Daldala ammaa .",
+  "@current_business": {},
+  "dark": "Duukkana",
+  "@dark": {},
+  "date_format": "bifa guyyaa .",
+  "@date_format": {},
+  "date_received": "Guyyaa dhiyaate .",
+  "@date_received": {
+    "type": "text"
+  },
+  "dd_mm_yyyy": "DD/MM/YYYY .",
+  "@dd_mm_yyyy": {},
+  "default_sort_order": "Tartiiba saaguu durtii .",
+  "@default_sort_order": {},
+  "disabled": "Miidhamaa",
+  "@disabled": {},
+  "dontHaveAnAccount": "Akkaawuntii hin qabduu?",
+  "@dontHaveAnAccount": {
+    "type": "text"
+  },
+  "edit_business_profile": "Profaayilii daldalaa gulaaluu .",
+  "@edit_business_profile": {},
+  "email": "Imeelii",
+  "@email": {},
+  "email_live_chat_or_phone": "Email, kallattiin haasa'uu, ykn bilbila .",
+  "@email_live_chat_or_phone": {},
+  "enabled": "dandeessifame .",
+  "@enabled": {},
+  "enterYourEmailAddress": "Teessoo email keessanii galchaa",
+  "@enterYourEmailAddress": {},
+  "enterYourPhoneNumber": "Lakkoofsa bilbilaa keessan galchaa",
+  "@enterYourPhoneNumber": {},
+  "etb": "ETB",
+  "@etb": {
+    "type": "text"
+  },
+  "etb_": "",
+  "@etb_": {
+    "type": "text"
+  },
+  "etb_ethiopian_birr_": "ETB (birr Itoophiyaa) .",
+  "@etb_ethiopian_birr_": {},
+  "expiry_date": "Guyyaa dhumaatii .",
+  "@expiry_date": {
+    "type": "text"
+  },
+  "explore_products": "Oomishaalee qorachuu .",
+  "@explore_products": {
+    "type": "text"
+  },
+  "export_data": "Daataa al-ergii .",
+  "@export_data": {},
+  "faqs_tutorials": "FAQS .",
+  "@faqs_tutorials": {},
+  "filter": "Filtara .",
+  "@filter": {},
+  "finances": "Maallaqa",
+  "@finances": {},
+  "forget_password": "Jecha icciitii dagadhu .",
+  "@forget_password": {
+    "type": "text"
+  },
+  "forgotPassword": "Password dagattaniittuu?",
+  "@forgotPassword": {},
+  "fri": "fri .",
+  "@fri": {
+    "type": "text"
+  },
+  "general_settings": "Sajoo waliigalaa .",
+  "@general_settings": {},
+  "gifts_cards": "Kaardii Kennaa .",
+  "@gifts_cards": {},
+  "go_back": "Duubatti deebi'aa .",
+  "@go_back": {
+    "type": "text"
+  },
+  "help_center": "Giddugala Gargaarsaa .",
+  "@help_center": {},
+  "image_url": "URL fakkii .",
+  "@image_url": {
+    "type": "text"
+  },
+  "integrations_export": "Ida'amuu .",
+  "@integrations_export": {},
+  "inventory": "Eeruu",
+  "@inventory": {
+    "type": "text"
+  },
+  "inventory_management": "Bulchiinsa Inventaarii .",
+  "@inventory_management": {},
+  "items_expiring": "Meeshaaleen yeroon isaanii darbe .",
+  "@items_expiring": {},
+  "item_x": "Meeshaa x .",
+  "@item_x": {
+    "type": "text"
+  },
+  "last_backup_never": "Duubdeebii Dhumaa: Gonkumaa .",
+  "@last_backup_never": {},
+  "light": "Ifa",
+  "@light": {},
+  "login": "Galmee Galchuu",
+  "@login": {
+    "type": "text"
+  },
+  "logout": "Ba'uu .",
+  "@logout": {},
+  "low_stock_items": "Meeshaalee istookii gadi aanaa .",
+  "@low_stock_items": {},
+  "low_stock_threshold": "Ulaagaa istookii gadi aanaa .",
+  "@low_stock_threshold": {},
+  "mon": "Mon .",
+  "@mon": {
+    "type": "text"
+  },
+  "my_pharmacy_store": "Mana Faarmaasii koo .",
+  "@my_pharmacy_store": {},
+  "new_order": "Tartiiba haaraa .",
+  "@new_order": {},
+  "no_orders_found": "Ajajni hin argamne .",
+  "@no_orders_found": {
+    "type": "text"
+  },
+  "not_connected": "Walqabatee hin jiru .",
+  "@not_connected": {},
+  "notifications": "Beeksisa .",
+  "@notifications": {},
+  "ok": "Tole",
+  "@ok": {
+    "type": "text"
+  },
+  "or": "yookaan",
+  "@or": {},
+  "orders": "Ajaja .",
+  "@orders": {
+    "type": "text"
+  },
+  "otp_verification_failed": "Mirkaneessi OTP kufe .",
+  "@otp_verification_failed": {
+    "type": "text"
+  },
+  "out": "ala",
+  "@out": {
+    "type": "text"
+  },
+  "password": "Jecha iccitii",
+  "@password": {},
+  "password_has_been_reset_successfully": "Password milkaa'inaan irra deebi'ee kaa'ameera.",
+  "@password_has_been_reset_successfully": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long": "Password yoo xiqqaate arfiilee 8 dheerachuu qaba .",
+  "@password_must_be_at_least_8_characters_long": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long_": "Jechi icciitii yoo xiqqaate arfiilee 8 dheerachuu qaba.",
+  "@password_must_be_at_least_8_characters_long_": {
+    "type": "text"
+  },
+  "passwords_do_not_match": "Jechoonni icciitii wal hin simne .",
+  "@passwords_do_not_match": {
+    "type": "text"
+  },
+  "payment_methods": "Mala Kaffaltii .",
+  "@payment_methods": {},
+  "per_unit": "Yuunitii tokkoof .",
+  "@per_unit": {
+    "type": "text"
+  },
+  "phone": "bilbila",
+  "@phone": {
+    "type": "text"
+  },
+  "phoneNumber": "Bilbila",
+  "@phoneNumber": {},
+  "pleaseEnterYourCredentials": "Mee ragaa keessan galchaa",
+  "@pleaseEnterYourCredentials": {
+    "type": "text"
+  },
+  "please_enter_your_username_to_reset_your_password": "Mee maqaa fayyadamaa keessan galchaa jecha icciitii keessan irra deebi'ii kaa'i .",
+  "@please_enter_your_username_to_reset_your_password": {},
+  "please_use_the_new_password_when_logging_in": "Mee jecha icciitii haaraa yeroo seenan fayyadamaa .",
+  "@please_use_the_new_password_when_logging_in": {
+    "type": "text"
+  },
+  "pos_integration": "Ida’amuu POS .",
+  "@pos_integration": {},
+  "privacy_policy_terms": "Imaammata Dhuunfaa .",
+  "@privacy_policy_terms": {},
+  "product": "Oomisha",
+  "@product": {
+    "type": "text"
+  },
+  "product_code": "Koodii Omishaa .",
+  "@product_code": {
+    "type": "text"
+  },
+  "product_description": "Ibsa Omishaa .",
+  "@product_description": {
+    "type": "text"
+  },
+  "products": "Oomishaalee .",
+  "@products": {},
+  "products_list": "Tarree oomishaalee .",
+  "@products_list": {
+    "type": "text"
+  },
+  "purchase_orders": "Ajaja Bittaa .",
+  "@purchase_orders": {
+    "type": "text"
+  },
+  "purchase_price": "Gatii Bittaa .",
+  "@purchase_price": {
+    "type": "text"
+  },
+  "reports_and_analytics": "Gabaasaa fi xiinxala .",
+  "@reports_and_analytics": {},
+  "re_send_a_code_in": "Koodii irra deebi'ii ergi in .",
+  "@re_send_a_code_in": {
+    "type": "text"
+  },
+  "re_send_code_in_": "Koodii irra deebi'ii ergi in .",
+  "@re_send_code_in_": {
+    "type": "text"
+  },
+  "reset_password": "Jecha icciitii irra deebi'ii kaa'i .",
+  "@reset_password": {
+    "type": "text"
+  },
+  "revenue": "Galii",
+  "@revenue": {},
+  "sale_distribution": "Raabsa gurgurtaa .",
+  "@sale_distribution": {
+    "type": "text"
+  },
+  "sales": "Gurgurtaa .",
+  "@sales": {},
+  "sales_logged": "Gurgurtaan galmaa'e .",
+  "@sales_logged": {},
+  "sales_orders": "Ajaja Gurgurtaa .",
+  "@sales_orders": {
+    "type": "text"
+  },
+  "sat": "Taa'e",
+  "@sat": {
+    "type": "text"
+  },
+  "save": "Qusachuu",
+  "@save": {
+    "type": "text"
+  },
+  "save_changes": "Jijjiirama qusadhu .",
+  "@save_changes": {},
+  "scan_qr_code": "Koodii QR scan godhaa .",
+  "@scan_qr_code": {
+    "type": "text"
+  },
+  "search": "Barbaaduu",
+  "@search": {},
+  "select_date_range": "Hammangaa Guyyaa filadhu .",
+  "@select_date_range": {
+    "type": "text"
+  },
+  "select_theme": "Mata duree filadhu .",
+  "@select_theme": {},
+  "selling_price": "Gatii gurgurtaa .",
+  "@selling_price": {
+    "type": "text"
+  },
+  "send": "Erguu",
+  "@send": {
+    "type": "text"
+  },
+  "settings": "Sajoo .",
+  "@settings": {},
+  "share": "Qooduu",
+  "@share": {
+    "type": "text"
+  },
+  "sign_out_of_your_account": "Akkaawuntii keessan keessaa ba'aa .",
+  "@sign_out_of_your_account": {},
+  "signUp": "Galmaa'i",
+  "@signUp": {},
+  "signupDescription": "Itti fufuuf bal'ina armaan gadii galchaa.",
+  "@signupDescription": {},
+  "signupTitle": "Mee isin Mallatteessina",
+  "@signupTitle": {},
+  "stock_in_hand": "Istookii harka keessaa .",
+  "@stock_in_hand": {
+    "type": "text"
+  },
+  "stock_quantity": "Baay'ina istookii .",
+  "@stock_quantity": {
+    "type": "text"
+  },
+  "stores": "Manneen daldalaa .",
+  "@stores": {},
+  "submit": "Galchuu",
+  "@submit": {},
+  "subtitle": "Mata duree xiqqaa .",
+  "@subtitle": {
+    "type": "text"
+  },
+  "summary": "Cuunfaa",
+  "@summary": {
+    "type": "text"
+  },
+  "sun": "Aduu",
+  "@sun": {
+    "type": "text"
+  },
+  "supplier": "Dhiyeessaa .",
+  "@supplier": {
+    "type": "text"
+  },
+  "support_about": "Deeggarsa",
+  "@support_about": {},
+  "switch_business": "Daldala Jijjiiri .",
+  "@switch_business": {},
+  "system_default": "Durtii sirnaa .",
+  "@system_default": {},
+  "this_month": "Ji'a kana .",
+  "@this_month": {
+    "type": "text"
+  },
+  "this_week": "Torban kana .",
+  "@this_week": {
+    "type": "text"
+  },
+  "this_year": "Bara kana .",
+  "@this_year": {
+    "type": "text"
+  },
+  "thu": "Thu .",
+  "@thu": {
+    "type": "text"
+  },
+  "title": "Mata-duree",
+  "@title": {
+    "type": "text"
+  },
+  "today": "Har'a",
+  "@today": {
+    "type": "text"
+  },
+  "today_s_best_seller": "Har'a Gurgurataa Irra Caalaa .",
+  "@today_s_best_seller": {
+    "type": "text"
+  },
+  "total_orders": "Ajaja waliigalaa .",
+  "@total_orders": {},
+  "total_products": "Oomishaalee waliigalaa .",
+  "@total_products": {
+    "type": "text"
+  },
+  "total_value": "Gatii waliigalaa .",
+  "@total_value": {},
+  "tue": "Tue .",
+  "@tue": {
+    "type": "text"
+  },
+  "two_factor_authentication": "Mirkaneessaa sababoota lamaa .",
+  "@two_factor_authentication": {},
+  "unit": "Safartuu",
+  "@unit": {
+    "type": "text"
+  },
+  "update_your_login_credentials": "Mirkaneessa galmee kee haaromsi .",
+  "@update_your_login_credentials": {},
+  "user_preferences": "Filannoo fayyadamaa .",
+  "@user_preferences": {},
+  "user_profile": "Profaayilii Fayyadamtootaa .",
+  "@user_profile": {},
+  "verification": "Mirkaneessuu .",
+  "@verification": {
+    "type": "text"
+  },
+  "view_and_edit_your_profile": "Profile keessan ilaalaa fi gulaalaa .",
+  "@view_and_edit_your_profile": {},
+  "view_legal_documents": "Sanadoota Seeraa ilaali .",
+  "@view_legal_documents": {},
+  "view_more": "Dabalata ilaali",
+  "@view_more": {
+    "type": "text"
+  },
+  "wed": "Kibxata .",
+  "@wed": {
+    "type": "text"
+  },
+  "welcomeMessage": "Baga Nagaan Dhuftan!",
+  "@welcomeMessage": {
+    "type": "text"
+  },
+  "we_send_a_code_to": "Koodii mirkaneessaa irratti isiniif erginee jirra .",
+  "@we_send_a_code_to": {
+    "type": "text"
+  }
+}

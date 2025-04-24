@@ -1,3 +1,4 @@
+import 'colors.dart';
 import 'package:flutter/material.dart';
 
 enum WindowWidth {
@@ -103,6 +104,7 @@ const kPs0o6 = EdgeInsets.only(
 );
 const kPh60 = EdgeInsets.symmetric(horizontal: 60);
 const kPh60v60 = EdgeInsets.symmetric(vertical: 60, horizontal: 60);
+const kPh12v8 = EdgeInsets.symmetric(vertical: 12, horizontal: 8);
 const kPt24l4 = EdgeInsets.only(
   top: 24,
   left: 4.0,
@@ -143,3 +145,9 @@ const kVSpacer20 = SizedBox(height: 20);
 const kVSpacer40 = SizedBox(height: 40);
 
 final kButtonSidebarStyle = ElevatedButton.styleFrom(padding: kPh12);
+
+// IconTheme
+const kIconTheme = IconThemeData(
+  color: kColorSchemeSeed,
+  size: kIconSizeSmall,
+);

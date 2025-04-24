@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:animations/animations.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/auth/presentation/screens/login_screen.dart';
 import 'package:gcpro/features/home/presentation/screens/home_screen.dart';
 import 'package:gcpro/features/on_boarding/presentation/screens/on_boarding_screen.dart';

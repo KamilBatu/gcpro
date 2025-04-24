@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/inventory/presentation/providers/state/recieve_inventory_state_provider.dart';
 import 'package:gcpro/features/inventory/presentation/widgets/bottomsheet_dropdown.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/l10n/string_hardcoded.dart';
 import 'package:gcpro/shared/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,7 +33,13 @@ class RecieveInventoryScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Receive Inventory'),
+        title: Text(
+          'Receive Inventory',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: kColorWhite,
+              ),
+        ),
+        foregroundColor: kColorWhite,
         backgroundColor: kColorSchemeSeed,
       ),
       body: Padding(
@@ -81,8 +89,8 @@ class RecieveInventoryScreen extends ConsumerWidget {
                     imageUrl: "https://placehold.co/600x400/png",
                   ),
                 ],
-                hintText: "Product",
-                title: "Product",
+                hintText: AppLocalizations.of(context).product,
+                title: AppLocalizations.of(context).product,
                 defaultItem: defaultProduct,
                 onItemSelected: (item) {
                   _productController.text = item.title;
@@ -90,18 +98,17 @@ class RecieveInventoryScreen extends ConsumerWidget {
               ),
               const Gap(24),
               CustomTextField(
-                lableText: 'Batch Number',
+                lableText: AppLocalizations.of(context).batch_number.hardcoded,
                 hintText: 'BASD-123456',
                 controller: _batchNumberController,
                 suffixIcon: const Icon(
                   Icons.batch_prediction_rounded,
                   size: kIconSizeSmall,
                 ),
-                obscureText: false,
               ),
               const Gap(24),
               CustomTextField(
-                lableText: 'Expiry Date',
+                lableText: AppLocalizations.of(context).expiry_date.hardcoded,
                 hintText: '2025-01-01',
                 date: true,
                 controller: _expiryDateController,
@@ -109,11 +116,11 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Icons.calendar_month_rounded,
                   size: kIconSizeSmall,
                 ),
-                obscureText: false,
               ),
               const Gap(24),
               CustomTextField(
-                lableText: 'Purchase Price',
+                lableText:
+                    AppLocalizations.of(context).purchase_price.hardcoded,
                 hintText: '100 ETB',
                 number: true,
                 controller: _purchasePriceController,
@@ -128,7 +135,6 @@ class RecieveInventoryScreen extends ConsumerWidget {
                             .toStringAsFixed(2);
                   }
                 },
-                obscureText: false,
               ),
               const Gap(24),
               Row(
@@ -136,7 +142,8 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Expanded(
                     flex: 2,
                     child: CustomTextField(
-                      lableText: 'Selling Price',
+                      lableText:
+                          AppLocalizations.of(context).selling_price.hardcoded,
                       hintText: '100 ETB',
                       number: true,
                       controller: _sellingPriceController,
@@ -146,28 +153,30 @@ class RecieveInventoryScreen extends ConsumerWidget {
                       ),
                       onChanged: (value) {
                         if (value.isNotEmpty) {
-                          ref
-                              .read(revenuePercentageProvider.notifier)
-                              .updateRevenuePercentage(
-                                double.parse(
-                                  (double.parse(value) /
-                                          double.parse(
-                                            _purchasePriceController.text,
-                                          ) *
-                                          100)
-                                      .toStringAsFixed(2),
-                                ),
-                              );
+                          if (_purchasePriceController.text.isNotEmpty) {
+                            ref
+                                .read(revenuePercentageProvider.notifier)
+                                .updateRevenuePercentage(
+                                  double.parse(
+                                    (double.parse(value) /
+                                            (double.tryParse(
+                                                  _purchasePriceController.text,
+                                                ) ??
+                                                1) *
+                                            100)
+                                        .toStringAsFixed(2),
+                                  ),
+                                );
+                          }
                         }
                       },
-                      obscureText: false,
                     ),
                   ),
                   const Gap(12),
                   Expanded(
                     child: CustomTextField(
+                      lableText: AppLocalizations.of(context).revenue.hardcoded,
                       hintText: '150',
-                      lableText: 'Revenue',
                       number: true,
                       controller: _revenueController,
                       suffixIcon: const Icon(
@@ -178,18 +187,21 @@ class RecieveInventoryScreen extends ConsumerWidget {
                         if (value.isNotEmpty) {
                           _sellingPriceController.text = (double.parse(value) /
                                   100 *
-                                  double.parse(_purchasePriceController.text))
+                                  (double.tryParse(
+                                        _purchasePriceController.text,
+                                      ) ??
+                                      1))
                               .toStringAsFixed(2);
                         }
                       },
-                      obscureText: false,
                     ),
                   ),
                 ],
               ),
               const Gap(24),
               CustomTextField(
-                lableText: 'Stock Quantity',
+                lableText:
+                    AppLocalizations.of(context).stock_quantity.hardcoded,
                 hintText: '100',
                 number: true,
                 controller: _stockQuantityController,
@@ -197,7 +209,6 @@ class RecieveInventoryScreen extends ConsumerWidget {
                   Icons.inventory_2_rounded,
                   size: kIconSizeSmall,
                 ),
-                obscureText: false,
               ),
               const Gap(32),
               BottomSheetDropdown(
@@ -238,8 +249,8 @@ class RecieveInventoryScreen extends ConsumerWidget {
                     imageUrl: "https://placehold.co/600x400/png",
                   ),
                 ],
-                hintText: "Supplier",
-                title: "Supplier",
+                hintText: AppLocalizations.of(context).supplier,
+                title: AppLocalizations.of(context).supplier,
                 onItemSelected: (item) {
                   _supplierController.text = item.title;
                 },
@@ -248,7 +259,7 @@ class RecieveInventoryScreen extends ConsumerWidget {
               BFilledButton(
                 isLoading: false,
                 color: kColorSchemeSeed,
-                text: 'Submit',
+                text: AppLocalizations.of(context).submit.hardcoded,
                 padding: 0,
                 onPressed: () {},
               ),

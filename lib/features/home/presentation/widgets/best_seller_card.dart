@@ -1,6 +1,8 @@
 import 'dart:math';
 
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/gen/l10n.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -88,18 +90,18 @@ class BestSellerCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Today's Best Seller",
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).today_s_best_seller,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Gap(5),
-                  const Text(
-                    "Item X",
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).item_x,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                     ),
@@ -114,10 +116,12 @@ class BestSellerCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text(
-                      "View More",
-                      style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    child: Text(
+                      AppLocalizations.of(context).view_more,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
@@ -142,9 +146,9 @@ class BestSellerCard extends StatelessWidget {
               right: 45 + 10,
               top: 40,
               child: RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   children: [
-                    TextSpan(
+                    const TextSpan(
                       text: "3,456",
                       style: TextStyle(
                         color: Colors.white,
@@ -153,8 +157,8 @@ class BestSellerCard extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: " ETB",
-                      style: TextStyle(
+                      text: AppLocalizations.of(context).etb,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 12.5,
                         fontWeight: FontWeight.normal,

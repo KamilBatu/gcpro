@@ -1,6 +1,7 @@
-import 'package:gcpro/features/marketplace/presentation/providers/marketplace_state_provider.dart';
-import 'package:gcpro/features/marketplace/presentation/screens/marketplace_screen.dart';
+import 'package:gcpro_design_system/tokens/tokens.dart';
+import 'package:gcpro/features/marketplace/presentation/providers/marketplace_product_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/product_list_view_widget.dart';
+import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/show_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,12 +16,25 @@ class StoreItems extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 20, top: 5),
-          child: Text(
-            'Store Items',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 5, left: 20),
+              child: Text(
+                'Store Items ',
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+              child: Icon(
+                Icons.keyboard_arrow_right,
+                size: 25,
+                color: kColorBlack50,
+              ),
+            )
+          ],
         ),
         Expanded(
           child: allProducts.when(

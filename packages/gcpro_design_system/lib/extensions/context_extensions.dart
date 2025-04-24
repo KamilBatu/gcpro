@@ -1,4 +1,4 @@
-import '../gcpro_design_sysytem.dart';
+import '../gcpro_design_system.dart';
 import 'package:flutter/material.dart';
 
 extension MediaQueryExtension on BuildContext {

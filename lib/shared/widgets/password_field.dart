@@ -1,9 +1,9 @@
-import 'package:gcpro/l10n/app_localizations.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/shared/globals.dart';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
 
 class CustomPasswordField extends StatefulWidget {
   const CustomPasswordField({
@@ -56,7 +56,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
           enabled: !widget.disabled,
           decoration: InputDecoration(
             hintText: widget.hintText ??
-                AppLocalizations.of(context)!.pleaseEnterYourCredentials,
+                AppLocalizations.of(context).pleaseEnterYourCredentials,
             hintStyle: const TextStyle(
               color: Colors.grey,
               fontSize: 12,

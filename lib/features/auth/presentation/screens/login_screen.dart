@@ -17,7 +17,7 @@ class LoginScreen extends ConsumerWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.surface,
         actions: const [
-          ChooseLocalization(),
+          // ChooseLocalization(),
           Gap(12),
         ],
       ),

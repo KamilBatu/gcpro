@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
 import 'package:gcpro/gen/assets.gen.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/shared/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +27,7 @@ class ResetPasswordScreen extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          "Reset Password",
+          AppLocalizations.of(context).reset_password,
           style: Theme.of(context).textTheme.displayMedium,
         ),
         centerTitle: false,
@@ -59,18 +60,19 @@ class SuccessScreen extends StatelessWidget {
         Assets.images.illustration1.image(height: 200),
         const Gap(16),
         Text(
-          "Password has been reset successfully",
+          AppLocalizations.of(context).password_has_been_reset_successfully,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const Gap(16),
         Text(
-          "Please use the new password when logging in",
+          AppLocalizations.of(context)
+              .please_use_the_new_password_when_logging_in,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const Gap(48),
         BFilledButton(
           isLoading: false,
-          text: "Ok",
+          text: AppLocalizations.of(context).ok,
           onPressed: () => AutoRouter.of(context).maybePop(),
         ),
       ],
@@ -134,14 +136,14 @@ class _ResetFormState extends State<ResetForm> {
           CustomPasswordField(
             height: 5,
             controller: affirmPasswordController,
-            hintText: "Confirm password",
+            hintText: AppLocalizations.of(context).confirm_password,
             addError: addError,
             removeError: removeError,
           ),
           const Gap(48),
           BFilledButton(
             isLoading: widget.state is AuthLoading,
-            text: "Change Password",
+            text: AppLocalizations.of(context).change_password,
             padding: 0,
             onPressed: () {
               if (!formKey.currentState!.validate()) return;

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:gcpro/shared/globals.dart';
 import 'package:gcpro/shared/utils/responsive/sizing_info.dart';
+import 'package:flutter/material.dart';
 
 class ResponsiveBuilder extends StatelessWidget {
   const ResponsiveBuilder({required this.builder, super.key});

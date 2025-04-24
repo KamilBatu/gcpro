@@ -5,3 +5,7 @@ abstract class ProductRepository {
   Future<List<Product>> getAllProducts();
   Future<List<Product>> getProductsBySeller(int sellerId);
 }
+
+abstract class CategoryRepository {
+  Future<List<Product>> getAllCategory();
+}

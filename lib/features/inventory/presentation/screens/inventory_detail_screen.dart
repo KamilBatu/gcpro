@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/inventory/presentation/providers/state/filter_state_provider.dart';
 import 'package:gcpro/features/inventory/presentation/screens/product_details_screen.dart';
 import 'package:gcpro/features/inventory/presentation/widgets/date_range_picker.dart';
 import 'package:gcpro/features/inventory/presentation/widgets/item_state.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/l10n/string_hardcoded.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
+import 'package:gcpro/shared/mixins/localization_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
@@ -78,22 +81,21 @@ class InventoryDetailScreen extends StatelessWidget {
           SliverAppBar(
             pinned: true,
             expandedHeight: 65,
-            backgroundColor: kColorSchemeSeed,
             elevation: 0,
-            flexibleSpace: const FlexibleSpaceBar(
+            flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                "INVENTORY ITEM DETAIL",
+                "Inventory Item Details".hardcoded,
                 style: TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),
             leading: Padding(
               padding: const EdgeInsets.only(top: 16),
               child: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.arrow_back),
                 onPressed: () => Navigator.pop(context),
               ),
             ),
@@ -217,7 +219,8 @@ class InventoryDetailScreen extends StatelessWidget {
                           }).toList();
 
                           DateTime parseDate(String dateString) {
-                            final dateFormat = DateFormat("dd/MM/yyyy hh:mma");
+                            final dateFormat =
+                                DateFormat("dd/MM/yyyy hh:mma", 'en_US');
                             return dateFormat.parse(dateString);
                           }
 
@@ -309,7 +312,8 @@ class _FilterButton extends ConsumerWidget {
                 const Icon(Icons.check, color: Colors.white, size: 16),
               if (filterState.name == label) const Gap(4),
               Text(
-                label.toUpperCase(),
+                AppLocalizations.of(context).getFiltterLable(label) ??
+                    label.toUpperCase(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color:

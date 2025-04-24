@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gcpro/shared/data/local/secure_storage_const.dart';
 import 'package:gcpro/shared/data/local/storage_service.dart';
 import 'package:gcpro/shared/domain/providers/shared_preferences_storage_service_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final appThemeProvider = StateNotifierProvider<AppThemeModeNotifier, ThemeMode>(
   (ref) {
     final storage = ref.watch(sharedPrefstorageServiceProvider);
-    return AppThemeModeNotifier(storage as StorageService);
+    return AppThemeModeNotifier(storage);
   },
   name: 'appThemeProvider',
 );

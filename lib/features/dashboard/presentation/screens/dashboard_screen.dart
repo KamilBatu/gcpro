@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/dashboard/presentation/widgets/drawer.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 

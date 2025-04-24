@@ -1,4 +1,4 @@
-import 'package:gcpro/l10n/app_localizations.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -24,7 +24,7 @@ class OrSplitter extends StatelessWidget {
           ),
           const Gap(10),
           Text(
-            AppLocalizations.of(context)!.or,
+            AppLocalizations.of(context).or,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const Gap(10),

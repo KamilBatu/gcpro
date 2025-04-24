@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:gcpro_design_system/tokens/colors.dart';
+import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/actionbutton_iconsbutton.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 import 'show_bottom_sheet_action.dart';
@@ -15,64 +17,54 @@ class ProductActionsWidget extends StatefulWidget {
 class _ProductActionsWidgetState extends State<ProductActionsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.chat_bubble_outline),
-            ),
-            IconButton(
-              onPressed: () {
-                context.router.push(MarketplaceCartRoute());
-              },
-              icon: Icon(Icons.shopping_cart_outlined),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                showBottomSheetAddToCart(context, widget.product);
-              },
-              child: const Text('Add to Cart'),
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(60, 40), // Button's visible size
-                backgroundColor:
-                    Colors.transparent, // Transparent fill for outline
-                foregroundColor:
-                    Theme.of(context).colorScheme.secondary, // Text color
-                side: BorderSide(
-                  color:
-                      Theme.of(context).colorScheme.secondary, // Border color
-                  width: 0.5, // Border thickness
+    return Container(
+      color: kColorWhite,
+      padding: EdgeInsets.all(12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          TextButton(
+            onPressed: () {
+              context.router.navigate(const ChatRoute());
+            },
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CircleAvatar(
+                  backgroundColor: kColorBlack25,
+                  foregroundColor: kColorWhite,
+                  minRadius: 15,
+                  child: Icon(Icons.chat_rounded),
                 ),
-                elevation: 0, // No shadow
-              ),
+                Text(
+                  'chat',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
             ),
-            SizedBox(
-              width: 10,
-            ),
-            ElevatedButton(
+          ),
+          buildActionButton(
+              heightValue: 0.05,
+              widthValue: 0.37,
+              context: context,
+              isOutlined: true,
+              label: 'Add to cart',
               onPressed: () {
-                showBottomSheetBuyNow(context, widget.product);
-              },
-              child: Text('Buy now',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  )),
-              style: ElevatedButton.styleFrom(
-                  minimumSize: Size(60, 40),
-                  backgroundColor: Theme.of(context).colorScheme.primary),
-            )
-          ],
-        ),
-      ],
+                showBottomSheets(
+                  context: context,
+                  product: widget.product,
+                  isBuyNow: false,
+                );
+              }),
+          buildActionButton(
+              heightValue: 0.05,
+              widthValue: 0.37,
+              context: context,
+              textColor: kColorWhite,
+              label: 'Send inquiry',
+              onPressed: () {}),
+        ],
+      ),
     );
   }
 }

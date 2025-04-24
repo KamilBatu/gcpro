@@ -1,4 +1,4 @@
-import 'package:gcpro/features/marketplace/presentation/providers/marketplace_state_provider.dart';
+import 'package:gcpro/features/marketplace/presentation/providers/marketplace_product_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/product_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

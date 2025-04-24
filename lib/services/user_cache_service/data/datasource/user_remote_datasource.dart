@@ -110,7 +110,8 @@ class UserRemoteSource extends UserDataRemoteSource {
 
   @override
   Future<Either<AppException, UserCore>> updateUser(
-      Map<String, String> data) async {
+    Map<String, String> data,
+  ) async {
     return _request(
       '/auth/user/update',
       method: 'patch',

@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/actionbutton_iconsbutton.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 import '../../domain/entities/product_entity.dart';
@@ -35,9 +37,11 @@ class ProductCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: padding,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius ?? 15.0),
-      ),
+      decoration: buildContainerDecoration(
+          borderRadius: 8,
+          offsetY: -1,
+          blurRadius: 1,
+          boxColor: Colors.transparent),
       clipBehavior: Clip.hardEdge,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,20 +56,18 @@ class ProductCardWidget extends StatelessWidget {
   Widget _buildImageSection(BuildContext context) {
     return GestureDetector(
       onTap: onCardTap ??
-          () => context.router.push(
-                ProductDetailRoute(id: product.id.toString()),
-              ),
+          () => context.router.push(RelatedProductPage(id: product.id)),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * (cardHeightFactor ?? 0.15),
         width: double.infinity,
-        child: Image.network(
+        child: Image.asset(
           product.imageUrl,
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) => _buildErrorImage(),
-          loadingBuilder: (context, child, loadingProgress) {
-            if (loadingProgress == null) return child;
-            return Center(child: CircularProgressIndicator());
-          },
+          // loadingBuilder: (context, child, loadingProgress) {
+          //   if (loadingProgress == null) return child;
+          //   return Center(child: CircularProgressIndicator());
+          // },
         ),
       ),
     );
@@ -77,7 +79,7 @@ class ProductCardWidget extends StatelessWidget {
       title: Text(
         product.name,
         style: titleStyle ??
-            Theme.of(context).textTheme.bodyMedium?.copyWith(
+            Theme.of(context).textTheme.bodySmall?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
         overflow: TextOverflow.ellipsis,
@@ -90,30 +92,13 @@ class ProductCardWidget extends StatelessWidget {
             style: priceStyle ?? Theme.of(context).textTheme.bodySmall,
           ),
           Text(
-            "bole,Adama",
+            "bole,adama",
             style: locationStyle ??
                 Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: kColorSchemeSeed,
                     ),
           ),
         ],
-      ),
-      trailing: showSellerAvatar ? _buildSellerAvatar(context) : null,
-    );
-  }
-
-  Widget _buildSellerAvatar(BuildContext context) {
-    return GestureDetector(
-      onTap: onSellerTap ?? () => context.router.push(SellerProfileRoute()),
-      child: CircleAvatar(
-        radius: 17,
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        child: sellerIcon ??
-            Icon(
-              Icons.abc,
-              size: 20,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
       ),
     );
   }

@@ -1,4 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/l10n/string_hardcoded.dart';
+import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -107,7 +111,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: kP20,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -116,7 +120,7 @@ class CustomAppBar extends StatelessWidget {
               child: IconButton(
                 icon: const Icon(
                   Icons.arrow_back,
-                  color: Colors.white,
+                  color: kColorWhite,
                   size: 20,
                 ),
                 onPressed: () => Navigator.pop(context),
@@ -128,15 +132,98 @@ class CustomAppBar extends StatelessWidget {
                 // three dots icon
                 icon: const Icon(
                   Icons.more_vert,
-                  color: Colors.white,
+                  color: kColorWhite,
                   size: 20,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet<void>(
+                    context: context,
+                    useRootNavigator: true,
+                    constraints: const BoxConstraints(maxHeight: 500),
+                    builder: (context) {
+                      return Container(
+                        margin: const EdgeInsets.only(top: 20, bottom: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 16, bottom: 16),
+                              child: Text(
+                                'Select Action'.hardcoded,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                      color: kColorSchemeSeed,
+                                    ),
+                              ),
+                            ),
+                            Wrap(
+                              spacing: 5,
+                              runSpacing: 5,
+                              children: [
+                                _buildOption(
+                                  context,
+                                  title: 'Edit'.hardcoded,
+                                  icon: Icons.edit,
+                                  onTap: () {
+                                    AutoRouter.of(context)
+                                        .push(EditProductRoute(productId: "1"));
+                                  },
+                                ),
+                                _buildOption(
+                                  context,
+                                  title: 'Delete'.hardcoded,
+                                  icon: Icons.delete,
+                                  onTap: () {
+                                    // AutoRouter.of(context)
+                                    //     .push(const DeleteProductRoute());
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildOption(
+    BuildContext context, {
+    required String title,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    return ListTile(
+      dense: true,
+      selectedTileColor: kColorSchemeSeed.withAlpha(15),
+      visualDensity: const VisualDensity(
+        vertical: VisualDensity.minimumDensity,
+        horizontal: VisualDensity.minimumDensity,
+      ),
+      leading: Icon(
+        icon,
+        size: 20,
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.normal,
+        ),
+      ),
+      onTap: onTap,
     );
   }
 }
@@ -171,15 +258,15 @@ class ProductDetailsContainer extends StatelessWidget {
       snapAnimationDuration: const Duration(milliseconds: 500),
       builder: (context, scrollController) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding: kPh20v15,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.surface,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(50)),
+            borderRadius: kTopBorderRadius,
           ),
           child: SingleChildScrollView(
             controller: scrollController,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
+              padding: kPh4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -240,10 +327,16 @@ class ProductInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        DetailRow(title: "Product Code", value: productCode),
-        DetailRow(title: "Category", value: category),
-        DetailRow(title: "Brand", value: brand),
-        DetailRow(title: "Unit", value: unit),
+        DetailRow(
+          title: AppLocalizations.of(context).product_code,
+          value: productCode,
+        ),
+        DetailRow(
+          title: AppLocalizations.of(context).category,
+          value: category,
+        ),
+        DetailRow(title: AppLocalizations.of(context).brand, value: brand),
+        DetailRow(title: AppLocalizations.of(context).unit, value: unit),
       ],
     );
   }
@@ -282,18 +375,37 @@ class PriceTag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(12),
+      padding: kPh12v8,
       decoration: BoxDecoration(
-        color: Colors.green[100],
-        borderRadius: BorderRadius.circular(12),
+        color: kColorSchemeSeed.withAlpha(40),
+        borderRadius: kBorderRadius10,
       ),
       child: Center(
-        child: Text(
-          "\$${defaultPrice.toStringAsFixed(2)} per unit",
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: Colors.green[800],
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: AppLocalizations.of(context).etb,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: kColorSchemeSeed,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
+              TextSpan(
+                text: defaultPrice.toStringAsFixed(2),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: kColorSchemeSeed,
+                    ),
+              ),
+              TextSpan(
+                text: AppLocalizations.of(context).per_unit,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: kColorSchemeSeed,
+                    ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -311,10 +423,10 @@ class ProductDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Product Description",
+          AppLocalizations.of(context).product_description,
           style: Theme.of(context)
               .textTheme
-              .titleLarge
+              .titleMedium
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const Gap(10),

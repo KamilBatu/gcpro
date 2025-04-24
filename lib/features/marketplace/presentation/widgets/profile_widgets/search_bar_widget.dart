@@ -1,4 +1,4 @@
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/search_container.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/show_search_delegate.dart';
 import 'package:flutter/material.dart';

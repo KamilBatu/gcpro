@@ -5,7 +5,7 @@ class Response {
   Response({
     required this.statusCode,
     this.statusMessage,
-    this.data = const {},
+    this.data = const <String, dynamic>{},
   });
   final int statusCode;
   final String? statusMessage;

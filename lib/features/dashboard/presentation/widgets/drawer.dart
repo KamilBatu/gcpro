@@ -1,19 +1,16 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:gcpro/features/auth/presentation/providers/auth.dart';
-import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
-import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/l10n/string_hardcoded.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
-import 'package:gcpro/shared/globals.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class BitaDrawer extends ConsumerWidget {
+class BitaDrawer extends StatelessWidget {
   const BitaDrawer({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Drawer(
       width: MediaQuery.of(context).size.width * 0.75,
       shape: const RoundedRectangleBorder(
@@ -77,44 +74,38 @@ class BitaDrawer extends ConsumerWidget {
                 child: ListView(
                   padding: kPv10,
                   children: [
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.credit_card,
-                      text: 'Payment Methods',
+                      text: AppLocalizations.of(context)
+                          .payment_methods
+                          .hardcoded,
                     ),
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.account_balance_wallet,
-                      text: 'Finances',
+                      text: AppLocalizations.of(context).finances.hardcoded,
                     ),
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.card_giftcard,
-                      text: 'Gifts Cards',
+                      text: AppLocalizations.of(context).gifts_cards.hardcoded,
                     ),
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.bar_chart,
-                      text: 'Reports and Analytics',
+                      text: AppLocalizations.of(context)
+                          .reports_and_analytics
+                          .hardcoded,
                     ),
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.store,
-                      text: 'Stores',
+                      text: AppLocalizations.of(context).stores.hardcoded,
                     ),
-                    const DrawerItem(
+                    DrawerItem(
                       icon: Icons.settings,
-                      text: 'Settings',
+                      text: AppLocalizations.of(context).settings.hardcoded,
+                      onTap: () => context.router.push(const SettingsRoute()),
                     ),
                     DrawerItem(
                       icon: Icons.logout,
-                      text: 'Logout',
-                      func: () async {
-                        await ref
-                            .read(authNotifierProvider.notifier)
-                            .logoutUser();
-                        final authState = ref.read(authNotifierProvider);
-                        print('Post-logout state: $authState'); // Debug
-                        if (authState is AuthSuccess &&
-                            authState.success == SuccessState.userLoggedOut) {
-                          context.router.replaceAll([const LoginRoute()]);
-                        }
-                      },
+                      text: AppLocalizations.of(context).logout.hardcoded,
                     ),
                   ],
                 ),
@@ -128,12 +119,16 @@ class BitaDrawer extends ConsumerWidget {
 }
 
 class DrawerItem extends StatelessWidget {
-  const DrawerItem(
-      {required this.icon, required this.text, super.key, this.func});
+  const DrawerItem({
+    required this.icon,
+    required this.text,
+    this.onTap,
+    super.key,
+  });
 
   final IconData icon;
   final String text;
-  final Function? func;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -141,11 +136,7 @@ class DrawerItem extends StatelessWidget {
       padding: kPb10,
       child: InkWell(
         splashColor: kColorSchemeSeed.withAlpha(100),
-        onTap: () {
-          if (func != null) {
-            func!();
-          }
-        },
+        onTap: onTap ?? () {},
         child: Padding(
           padding: kPh20v15,
           child: Row(

@@ -1,5 +1,5 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
 
 Icon getActionIcon(String action) {
   switch (action) {

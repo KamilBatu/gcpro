@@ -1,4 +1,4 @@
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:flutter/material.dart';
 
 class ActionCard extends StatelessWidget {
@@ -32,11 +32,16 @@ class ActionCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+            SizedBox(
+              width: 200,
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             ElevatedButton(
@@ -50,8 +55,15 @@ class ActionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              child:
-                  Text(buttonText, style: const TextStyle(color: Colors.white)),
+              child: SizedBox(
+                width: 70,
+                child: Text(
+                  buttonText,
+                  style: const TextStyle(color: Colors.white),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
             ),
           ],
         ),

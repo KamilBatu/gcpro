@@ -1,13 +1,13 @@
+import 'package:gcpro/features/marketplace/presentation/providers/marketplace_cart_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/custom_button.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/custom_checkbox.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Main Cart Bottom Bar Widget
-class CartBottomBar extends StatelessWidget {
+class CartBottomBar extends ConsumerWidget {
   final bool isAllSelected;
   final VoidCallback onAllSelectedChanged;
   final VoidCallback onCheckoutPressed;
-  final String totalAmount;
   final int cartCount;
   final bool useCircularStyle;
 
@@ -16,13 +16,14 @@ class CartBottomBar extends StatelessWidget {
     required this.isAllSelected,
     required this.onAllSelectedChanged,
     required this.onCheckoutPressed,
-    required this.totalAmount,
     this.cartCount = 0,
     this.useCircularStyle = true,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cart = ref.watch(marketPlaceCartProvider);
+    final cartNotifier = ref.read(marketPlaceCartProvider.notifier);
     return Container(
       padding: const EdgeInsets.all(16),
       child: Row(
@@ -38,15 +39,18 @@ class CartBottomBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                "ETB${totalAmount} >",
-                style: Theme.of(context).textTheme.bodyLarge,
+                "${cartNotifier.totalCartPrice.toStringAsFixed(1)} ETB",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 width: MediaQuery.sizeOf(context).width * 0.08,
               ),
               CustomButton(
                 onPressed: onCheckoutPressed,
-                label: 'Checkout ($cartCount)',
+                label: 'Checkout (${cart.items.length})',
                 minimumSize: Size(60, 40),
               ),
             ],

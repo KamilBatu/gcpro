@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
 import 'package:gcpro/features/auth/presentation/screens/orientations/login_mobile.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:gcpro/shared/domain/providers/global_error_provider.dart';
 import 'package:gcpro/shared/domain/providers/username_type_provider.dart';
@@ -41,15 +42,27 @@ class LoginFormState extends ConsumerState<LoginForm> {
 
   void onLogin() {
     if (usernameController.text.isEmpty) {
-      addError("Password must be at least 8 characters long.");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     } else {
-      removeError("Password must be at least 8 characters long.");
+      removeError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
 
     if (passwordController.text.isEmpty) {
-      addError("Password must be at least 8 characters long.");
+      addError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     } else {
-      removeError("Password must be at least 8 characters long.");
+      removeError(
+        AppLocalizations.of(context)
+            .password_must_be_at_least_8_characters_long,
+      );
     }
 
     if (formkey.currentState == null) return;
@@ -60,7 +73,7 @@ class LoginFormState extends ConsumerState<LoginForm> {
 
     ref.read(authNotifierProvider.notifier).otpSend(
           value: usernameController.text,
-          identifier: "email",
+          identifier: AppLocalizations.of(context).email,
           otpType: OTPType.TWO_FACTOR_AUTHENTICATION,
         );
   }
@@ -122,7 +135,7 @@ class LoginFormState extends ConsumerState<LoginForm> {
 
           ref.read(authNotifierProvider.notifier).otpSend(
                 value: usernameController.text,
-                identifier: "email",
+                identifier: AppLocalizations.of(context).email,
                 otpType: OTPType.TWO_FACTOR_AUTHENTICATION,
               );
         }

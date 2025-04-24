@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
-import 'package:gcpro/features/inventory/presentation/widgets/bottomsheet_dropdown.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/inventory/presentation/widgets/product_search_delegation.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -23,18 +23,18 @@ class ProductsScreen extends StatelessWidget {
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             elevation: 0,
             foregroundColor: Colors.black,
-            flexibleSpace: const FlexibleSpaceBar(
+            flexibleSpace: FlexibleSpaceBar(
               title: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.inventory,
                     color: kColorSchemeSeed,
                     size: 18,
                   ),
-                  Gap(8),
+                  const Gap(8),
                   Text(
-                    "Inventory",
-                    style: TextStyle(
+                    AppLocalizations.of(context).inventory,
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: kColorSchemeSeed,
                     ),
@@ -42,7 +42,7 @@ class ProductsScreen extends StatelessWidget {
                 ],
               ),
               centerTitle: false,
-              titlePadding: EdgeInsets.all(16),
+              titlePadding: const EdgeInsets.all(16),
             ),
             actions: [
               IconButton(
@@ -78,13 +78,13 @@ class ProductsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SummaryCard(
-                        title: "Total Products",
+                        title: AppLocalizations.of(context).total_products,
                         value: "128",
                         percentage: "+8.00%",
                         color: kColorStatusCode200,
                       ),
-                      const SummaryCard(
-                        title: "Stock in Hand",
+                      SummaryCard(
+                        title: AppLocalizations.of(context).stock_in_hand,
                         value: "2,350",
                         percentage: "+2.34%",
                         color: Colors.blue,
@@ -94,9 +94,12 @@ class ProductsScreen extends StatelessWidget {
                   const Gap(20),
 
                   // Product List Title
-                  const Text(
-                    "Products List",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  Text(
+                    AppLocalizations.of(context).products_list,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   ),
                   const Gap(10),
 
@@ -120,15 +123,7 @@ class ProductsScreen extends StatelessWidget {
       // Floating Action Button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AutoRouter.of(context).push(
-            RecieveInventoryRoute(
-              defaultProduct: DropdownItem(
-                title: "Item 1",
-                subtitle: "Description 1",
-                imageUrl: "https://placehold.co/600x400/png",
-              ),
-            ),
-          );
+          AutoRouter.of(context).push(RecieveInventoryRoute());
         },
         backgroundColor: kColorSchemeSeed,
         child: const Icon(Icons.add, color: kColorWhite),

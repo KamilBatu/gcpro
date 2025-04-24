@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:gcpro_design_system/tokens/colors.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/profile_widgets/profile_bottom_bar.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/profile_widgets/rating_info_widget.dart';
@@ -6,6 +7,7 @@ import 'package:gcpro/features/marketplace/presentation/widgets/profile_widgets/
 import 'package:gcpro/features/marketplace/presentation/widgets/profile_widgets/store_info_widget.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/profile_widgets/store_items.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/category_item.dart';
+import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -24,6 +26,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: SearchBarWidget(),
+        foregroundColor: kColorWhite,
         backgroundColor: kColorBlack50,
       ),
       body: CustomScrollView(
@@ -32,15 +35,25 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
           SliverToBoxAdapter(
             child: Container(
               color: kColorBlack50,
-              child: const Column(
+              child: Column(
                 children: [
                   StoreInfoWidget(),
-                  RatingInfoWidget(),
+                  GestureDetector(
+                    onTap: () {
+                      context.router.push(SellerInformation());
+                    },
+                    child: RatingInfoWidget(),
+                  ),
                 ],
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10,
+            ),
+          ),
+          const SliverToBoxAdapter(
             child: CategoryRow(),
           ),
           SliverToBoxAdapter(

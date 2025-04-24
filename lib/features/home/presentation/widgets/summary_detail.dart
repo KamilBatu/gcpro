@@ -1,16 +1,19 @@
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/home/presentation/providers/home_provider.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/shared/mixins/localization_helper.dart';
 import 'package:gcpro/shared/widgets/drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 
-class SummaryGrid extends StatelessWidget {
-  const SummaryGrid({required this.summaryItems, super.key});
-  final List<Map<String, String>> summaryItems;
+class SummaryGrid extends ConsumerWidget {
+  const SummaryGrid({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final summaryItems = ref.watch(summaryDistribution);
+
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -19,19 +22,20 @@ class SummaryGrid extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Summary',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context).summary,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               Consumer(
                 builder: (context, ref, child) {
                   return CustomDropDown(
-                    defaultOption: "Today",
+                    defaultOption: "today",
                     options: const [
-                      "Today",
-                      "This Week",
-                      "This Month",
-                      "This Year",
+                      "today",
+                      "this_week",
+                      "this_month",
+                      "this_year",
                     ],
                     onChanged: (value) {
                       ref
@@ -89,16 +93,21 @@ class SummaryCard extends StatelessWidget {
         children: [
           Text(
             value,
-            style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          const SizedBox(height: 4),
+          const Gap(4),
           Text(
-            label,
+            AppLocalizations.of(context).getSummaryLable(label) ?? label,
             style: const TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: kColorSchemeSeed,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

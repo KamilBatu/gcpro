@@ -7,7 +7,7 @@ class ProductImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
+    return Image.asset(
       imageUrl,
       height: 250,
       width: double.infinity,
@@ -15,7 +15,7 @@ class ProductImageWidget extends StatelessWidget {
       errorBuilder: (context, error, stackTrace) => Container(
         height: 250,
         color: Colors.grey[300],
-        child: const Center(child: Text('Image not available')),
+        child: const Center(child: Text('image not available')),
       ),
     );
   }

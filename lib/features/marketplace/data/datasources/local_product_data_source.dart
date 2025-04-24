@@ -1,9 +1,12 @@
+import 'package:gcpro/features/marketplace/domain/entities/product_entity.dart';
+
 import '../models/product_model.dart';
 import './dummydata.dart';
 
 class LocalProductDataSource {
   // Static list of products for development
-  final _products = products;
+  final _products = productsMockData;
+  final _categories = categories;
 
   Future<ProductModel> getProductById(int id) async {
     final product = _products.firstWhere(
@@ -15,5 +18,9 @@ class LocalProductDataSource {
 
   Future<List<ProductModel>> getAllProducts() async {
     return _products;
+  }
+
+  Future<List<Category>> getAllCategory() async {
+    return _categories;
   }
 }

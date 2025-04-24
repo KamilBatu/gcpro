@@ -1,0 +1,497 @@
+{
+  "@@locale": "en",
+  "account_security": "Account & Security",
+  "@account_security": {},
+  "added": "added",
+  "@added": {
+    "type": "text"
+  },
+  "add_item": "Add item",
+  "@add_item": {
+    "type": "text"
+  },
+  "add_new_business": "Add New Business",
+  "@add_new_business": {},
+  "add_new_item": "Add New Item",
+  "@add_new_item": {
+    "type": "text"
+  },
+  "address": "Address",
+  "@address": {},
+  "all": "all",
+  "@all": {
+    "type": "text"
+  },
+  "alreadyHaveAccount": "Already have a account?  ",
+  "@alreadyHaveAccount": {},
+  "api_access": "API Access",
+  "@api_access": {},
+  "appTitle": "Bita",
+  "@appTitle": {
+    "type": "text"
+  },
+  "app_version": "App Version",
+  "@app_version": {},
+  "auto_save_changes": "Auto-Save Changes",
+  "@auto_save_changes": {},
+  "backup_restore": "Backup & Restore",
+  "@backup_restore": {},
+  "barcode_scanner": "Barcode Scanner",
+  "@barcode_scanner": {},
+  "batch_editing": "Batch Editing",
+  "@batch_editing": {},
+  "batch_number": "Batch Number",
+  "@batch_number": {},
+  "brand": "Brand",
+  "@brand": {
+    "type": "text"
+  },
+  "businesses_available": "businesses available",
+  "@businesses_available": {},
+  "business_name": "Business Name",
+  "@business_name": {},
+  "business_profiles": "Business Profiles",
+  "@business_profiles": {},
+  "business_type": "Business Type",
+  "@business_type": {},
+  "by_name": "By Name",
+  "@by_name": {},
+  "category": "Category",
+  "@category": {
+    "type": "text"
+  },
+  "change_password": "Change Password",
+  "@change_password": {
+    "type": "text"
+  },
+  "check": "Check",
+  "@check": {
+    "type": "text"
+  },
+  "check_out": "Check out",
+  "@check_out": {
+    "type": "text"
+  },
+  "cloud_sync": "Cloud Sync",
+  "@cloud_sync": {},
+  "confirm_password": "Confirm password",
+  "@confirm_password": {
+    "type": "text"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {},
+  "connect_with_suppliers": "Connect with Suppliers",
+  "@connect_with_suppliers": {
+    "type": "text"
+  },
+  "contact_number": "Contact Number",
+  "@contact_number": {},
+  "contact_support": "Contact Support",
+  "@contact_support": {},
+  "continueWithGoogle": "Continue with Google",
+  "@continueWithGoogle": {
+    "type": "text"
+  },
+  "create_a_new_business_profile": "Create a new business profile",
+  "@create_a_new_business_profile": {},
+  "csv_excel_or_pdf": "CSV, Excel, or PDF",
+  "@csv_excel_or_pdf": {},
+  "currency": "Currency",
+  "@currency": {},
+  "current_business": "Current Business",
+  "@current_business": {},
+  "dark": "Dark",
+  "@dark": {},
+  "date_format": "Date Format",
+  "@date_format": {},
+  "date_received": "Date Received",
+  "@date_received": {
+    "type": "text"
+  },
+  "dd_mm_yyyy": "DD/MM/YYYY",
+  "@dd_mm_yyyy": {},
+  "default_sort_order": "Default Sort Order",
+  "@default_sort_order": {},
+  "disabled": "Disabled",
+  "@disabled": {},
+  "dontHaveAnAccount": "Don't have an account?",
+  "@dontHaveAnAccount": {
+    "type": "text"
+  },
+  "edit_business_profile": "Edit Business Profile",
+  "@edit_business_profile": {},
+  "email": "Email",
+  "@email": {},
+  "email_live_chat_or_phone": "Email, Live Chat, or Phone",
+  "@email_live_chat_or_phone": {},
+  "enabled": "Enabled",
+  "@enabled": {},
+  "enterYourEmailAddress": "Enter your email address",
+  "@enterYourEmailAddress": {},
+  "enterYourPhoneNumber": "Enter your phone number",
+  "@enterYourPhoneNumber": {},
+  "etb": " ETB",
+  "@etb": {
+    "type": "text"
+  },
+  "etb_": "ETB ",
+  "@etb_": {
+    "type": "text"
+  },
+  "etb_ethiopian_birr_": "ETB (Ethiopian Birr)",
+  "@etb_ethiopian_birr_": {},
+  "expiry_date": "Expiry Date",
+  "@expiry_date": {
+    "type": "text"
+  },
+  "explore_products": "Explore Products",
+  "@explore_products": {
+    "type": "text"
+  },
+  "export_data": "Export Data",
+  "@export_data": {},
+  "faqs_tutorials": "FAQs & Tutorials",
+  "@faqs_tutorials": {},
+  "filter": "Filter",
+  "@filter": {},
+  "finances": "Finances",
+  "@finances": {},
+  "forget_password": "Forget password",
+  "@forget_password": {
+    "type": "text"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {},
+  "fri": "Fri",
+  "@fri": {
+    "type": "text"
+  },
+  "general_settings": "General Settings",
+  "@general_settings": {},
+  "gifts_cards": "Gifts Cards",
+  "@gifts_cards": {},
+  "go_back": "Go back",
+  "@go_back": {
+    "type": "text"
+  },
+  "help_center": "Help Center",
+  "@help_center": {},
+  "image_url": "Image URL",
+  "@image_url": {
+    "type": "text"
+  },
+  "integrations_export": "Integrations & Export",
+  "@integrations_export": {},
+  "inventory": "Inventory",
+  "@inventory": {
+    "type": "text"
+  },
+  "inventory_management": "Inventory Management",
+  "@inventory_management": {},
+  "items_expiring": "Items Expiring",
+  "@items_expiring": {},
+  "item_x": "Item X",
+  "@item_x": {
+    "type": "text"
+  },
+  "last_backup_never": "Last backup: Never",
+  "@last_backup_never": {},
+  "light": "Light",
+  "@light": {},
+  "login": "Log In",
+  "@login": {
+    "type": "text"
+  },
+  "logout": "Logout",
+  "@logout": {},
+  "low_stock_items": "Low Stock Items",
+  "@low_stock_items": {},
+  "low_stock_threshold": "Low Stock Threshold",
+  "@low_stock_threshold": {},
+  "mon": "Mon",
+  "@mon": {
+    "type": "text"
+  },
+  "my_pharmacy_store": "My Pharmacy Store",
+  "@my_pharmacy_store": {},
+  "new_order": "New Order",
+  "@new_order": {},
+  "no_orders_found": "No orders found",
+  "@no_orders_found": {
+    "type": "text"
+  },
+  "not_connected": "Not connected",
+  "@not_connected": {},
+  "notifications": "Notifications",
+  "@notifications": {},
+  "ok": "Ok",
+  "@ok": {
+    "type": "text"
+  },
+  "or": "or",
+  "@or": {},
+  "orders": "Orders",
+  "@orders": {
+    "type": "text"
+  },
+  "otp_verification_failed": "OTP verification failed",
+  "@otp_verification_failed": {
+    "type": "text"
+  },
+  "out": "out",
+  "@out": {
+    "type": "text"
+  },
+  "password": "Password",
+  "@password": {},
+  "password_has_been_reset_successfully": "Password has been reset successfully",
+  "@password_has_been_reset_successfully": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long": "Password must be at least 8 characters long",
+  "@password_must_be_at_least_8_characters_long": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long_": "Password must be at least 8 characters long.",
+  "@password_must_be_at_least_8_characters_long_": {
+    "type": "text"
+  },
+  "passwords_do_not_match": "Passwords do not match",
+  "@passwords_do_not_match": {
+    "type": "text"
+  },
+  "payment_methods": "Payment Methods",
+  "@payment_methods": {},
+  "per_unit": " per unit",
+  "@per_unit": {
+    "type": "text"
+  },
+  "phone": "phone",
+  "@phone": {
+    "type": "text"
+  },
+  "phoneNumber": "Phone",
+  "@phoneNumber": {},
+  "pleaseEnterYourCredentials": "Please enter your credentials",
+  "@pleaseEnterYourCredentials": {
+    "type": "text"
+  },
+  "please_enter_your_username_to_reset_your_password": "Please enter your username to reset your password",
+  "@please_enter_your_username_to_reset_your_password": {},
+  "please_use_the_new_password_when_logging_in": "Please use the new password when logging in",
+  "@please_use_the_new_password_when_logging_in": {
+    "type": "text"
+  },
+  "pos_integration": "POS Integration",
+  "@pos_integration": {},
+  "privacy_policy_terms": "Privacy Policy & Terms",
+  "@privacy_policy_terms": {},
+  "product": "Product",
+  "@product": {
+    "type": "text"
+  },
+  "product_code": "Product Code",
+  "@product_code": {
+    "type": "text"
+  },
+  "product_description": "Product Description",
+  "@product_description": {
+    "type": "text"
+  },
+  "products": "Products",
+  "@products": {},
+  "products_list": "Products List",
+  "@products_list": {
+    "type": "text"
+  },
+  "purchase_orders": "Purchase Orders",
+  "@purchase_orders": {
+    "type": "text"
+  },
+  "purchase_price": "Purchase Price",
+  "@purchase_price": {
+    "type": "text"
+  },
+  "reports_and_analytics": "Reports and Analytics",
+  "@reports_and_analytics": {},
+  "re_send_a_code_in": "Re-send Code in",
+  "@re_send_a_code_in": {
+    "type": "text"
+  },
+  "re_send_code_in_": "Re-send Code in ",
+  "@re_send_code_in_": {
+    "type": "text"
+  },
+  "reset_password": "Reset Password",
+  "@reset_password": {
+    "type": "text"
+  },
+  "revenue": "Revenue",
+  "@revenue": {},
+  "sale_distribution": "Sale Distribution",
+  "@sale_distribution": {
+    "type": "text"
+  },
+  "sales": "Sales",
+  "@sales": {},
+  "sales_logged": "Sales logged",
+  "@sales_logged": {},
+  "sales_orders": "Sales Orders",
+  "@sales_orders": {
+    "type": "text"
+  },
+  "sat": "Sat",
+  "@sat": {
+    "type": "text"
+  },
+  "save": "Save",
+  "@save": {
+    "type": "text"
+  },
+  "save_changes": "Save Changes",
+  "@save_changes": {},
+  "scan_qr_code": "Scan QR code",
+  "@scan_qr_code": {
+    "type": "text"
+  },
+  "search": "Search",
+  "@search": {},
+  "select_date_range": "Select Date Range",
+  "@select_date_range": {
+    "type": "text"
+  },
+  "select_theme": "Select Theme",
+  "@select_theme": {},
+  "selling_price": "Selling Price",
+  "@selling_price": {
+    "type": "text"
+  },
+  "send": "Send",
+  "@send": {
+    "type": "text"
+  },
+  "settings": "Settings",
+  "@settings": {},
+  "share": "Share",
+  "@share": {
+    "type": "text"
+  },
+  "sign_out_of_your_account": "Sign out of your account",
+  "@sign_out_of_your_account": {},
+  "signUp": "Sign Up",
+  "@signUp": {},
+  "signupDescription": "Please enter the details below to continue.",
+  "@signupDescription": {},
+  "signupTitle": "Let's Sign you up",
+  "@signupTitle": {},
+  "stock_in_hand": "Stock in Hand",
+  "@stock_in_hand": {
+    "type": "text"
+  },
+  "stock_quantity": "Stock Quantity",
+  "@stock_quantity": {
+    "type": "text"
+  },
+  "stores": "Stores",
+  "@stores": {},
+  "submit": "Submit",
+  "@submit": {},
+  "subtitle": "Subtitle",
+  "@subtitle": {
+    "type": "text"
+  },
+  "summary": "Summary",
+  "@summary": {
+    "type": "text"
+  },
+  "sun": "Sun",
+  "@sun": {
+    "type": "text"
+  },
+  "supplier": "Supplier",
+  "@supplier": {
+    "type": "text"
+  },
+  "support_about": "Support & About",
+  "@support_about": {},
+  "switch_business": "Switch Business",
+  "@switch_business": {},
+  "system_default": "System Default",
+  "@system_default": {},
+  "this_month": "This Month",
+  "@this_month": {
+    "type": "text"
+  },
+  "this_week": "This Week",
+  "@this_week": {
+    "type": "text"
+  },
+  "this_year": "This Year",
+  "@this_year": {
+    "type": "text"
+  },
+  "thu": "Thu",
+  "@thu": {
+    "type": "text"
+  },
+  "title": "Title",
+  "@title": {
+    "type": "text"
+  },
+  "today": "Today",
+  "@today": {
+    "type": "text"
+  },
+  "today_s_best_seller": "Today's Best Seller",
+  "@today_s_best_seller": {
+    "type": "text"
+  },
+  "total_orders": "Total Orders",
+  "@total_orders": {},
+  "total_products": "Total Products",
+  "@total_products": {
+    "type": "text"
+  },
+  "total_value": "Total Value",
+  "@total_value": {},
+  "tue": "Tue",
+  "@tue": {
+    "type": "text"
+  },
+  "two_factor_authentication": "Two-Factor Authentication",
+  "@two_factor_authentication": {},
+  "unit": "Unit",
+  "@unit": {
+    "type": "text"
+  },
+  "update_your_login_credentials": "Update your login credentials",
+  "@update_your_login_credentials": {},
+  "user_preferences": "User Preferences",
+  "@user_preferences": {},
+  "user_profile": "User Profile",
+  "@user_profile": {},
+  "verification": "Verification",
+  "@verification": {
+    "type": "text"
+  },
+  "view_and_edit_your_profile": "View and edit your profile",
+  "@view_and_edit_your_profile": {},
+  "view_legal_documents": "View legal documents",
+  "@view_legal_documents": {},
+  "view_more": "View More",
+  "@view_more": {
+    "type": "text"
+  },
+  "wed": "Wed",
+  "@wed": {
+    "type": "text"
+  },
+  "welcomeMessage": "Welcome Back!",
+  "@welcomeMessage": {
+    "type": "text"
+  },
+  "we_send_a_code_to": "we've send you the verification code on ",
+  "@we_send_a_code_to": {
+    "type": "text"
+  }
+}

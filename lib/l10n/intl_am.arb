@@ -1,0 +1,497 @@
+{
+  "@@locale": "am",
+  "account_security": "መለያ",
+  "@account_security": {},
+  "added": "ታክሏል",
+  "@added": {
+    "type": "text"
+  },
+  "add_item": "ንጥል ያክሉ",
+  "@add_item": {
+    "type": "text"
+  },
+  "add_new_business": "አዲስ ንግድ ያክሉ",
+  "@add_new_business": {},
+  "add_new_item": "አዲስ ንጥል ያክሉ",
+  "@add_new_item": {
+    "type": "text"
+  },
+  "address": "አድራሻ",
+  "@address": {},
+  "all": "ሁሉም",
+  "@all": {
+    "type": "text"
+  },
+  "alreadyHaveAccount": "መለያ አለህ?  ",
+  "@alreadyHaveAccount": {},
+  "api_access": "API",
+  "@api_access": {},
+  "appTitle": "ቢታ",
+  "@appTitle": {
+    "type": "text"
+  },
+  "app_version": "የመተግበሪያ ስሪት",
+  "@app_version": {},
+  "auto_save_changes": "ለውጦችን ራስ-አስቀምጥ",
+  "@auto_save_changes": {},
+  "backup_restore": "ምትኬ",
+  "@backup_restore": {},
+  "barcode_scanner": "ባርኮድ ስካነር",
+  "@barcode_scanner": {},
+  "batch_editing": "በብዛት አርም",
+  "@batch_editing": {},
+  "batch_number": "የቡድን ቁጥር",
+  "@batch_number": {},
+  "brand": "የምርት ስም",
+  "@brand": {
+    "type": "text"
+  },
+  "businesses_available": "ንግዶች ይገኛሉ",
+  "@businesses_available": {},
+  "business_name": "የንግድ ስም",
+  "@business_name": {},
+  "business_profiles": "የንግድ መገለጫዎች",
+  "@business_profiles": {},
+  "business_type": "የንግድ ዓይነት",
+  "@business_type": {},
+  "by_name": "በስም",
+  "@by_name": {},
+  "category": "ምድብ",
+  "@category": {
+    "type": "text"
+  },
+  "change_password": "የይለፍ ቃል ቀይር",
+  "@change_password": {
+    "type": "text"
+  },
+  "check": "ይመልከቱ",
+  "@check": {
+    "type": "text"
+  },
+  "check_out": "ይመልከቱ",
+  "@check_out": {
+    "type": "text"
+  },
+  "cloud_sync": "የደመና ማመሳሰል",
+  "@cloud_sync": {},
+  "confirm_password": "የይለፍ ቃል ያረጋግጡ",
+  "@confirm_password": {
+    "type": "text"
+  },
+  "confirmPassword": "የይለፍ ቃል ያረጋግጡ",
+  "@confirmPassword": {},
+  "connect_with_suppliers": "ከአቅራቢዎች ጋር ይገናኙ",
+  "@connect_with_suppliers": {
+    "type": "text"
+  },
+  "contact_number": "የእውቂያ ቁጥር",
+  "@contact_number": {},
+  "contact_support": "ድጋፍን ያነጋግሩ",
+  "@contact_support": {},
+  "continueWithGoogle": "በGoogle ይቀጥሉ",
+  "@continueWithGoogle": {
+    "type": "text"
+  },
+  "create_a_new_business_profile": "አዲስ የንግድ ሥራ መገለጫ ይፍጠሩ",
+  "@create_a_new_business_profile": {},
+  "csv_excel_or_pdf": "CSV, Excel, ወይም PDF",
+  "@csv_excel_or_pdf": {},
+  "currency": "ምንዛሬ",
+  "@currency": {},
+  "current_business": "የአሁኑ ንግድ",
+  "@current_business": {},
+  "dark": "ጨለማ",
+  "@dark": {},
+  "date_format": "የቀን ቅርጸት",
+  "@date_format": {},
+  "date_received": "የደረሰበት ቀን",
+  "@date_received": {
+    "type": "text"
+  },
+  "dd_mm_yyyy": "ቅቅ/ወወ/ዓዓ",
+  "@dd_mm_yyyy": {},
+  "default_sort_order": "ነባሪ ዓይነት ትዕዛዝ",
+  "@default_sort_order": {},
+  "disabled": "ተሰናክሏል",
+  "@disabled": {},
+  "dontHaveAnAccount": "መለያ የለህም?",
+  "@dontHaveAnAccount": {
+    "type": "text"
+  },
+  "edit_business_profile": "የንግድ ሥራ መገለጫ አርትዕ",
+  "@edit_business_profile": {},
+  "email": "ኢሜይል",
+  "@email": {},
+  "email_live_chat_or_phone": "ኢሜል, የቀጥታ ውይይት, ወይም ስልክ",
+  "@email_live_chat_or_phone": {},
+  "enabled": "በርቷል",
+  "@enabled": {},
+  "enterYourEmailAddress": "የኢሜል አድራሻዎን ያስገቡ",
+  "@enterYourEmailAddress": {},
+  "enterYourPhoneNumber": "የስልክ ቁጥርዎን ያስገቡ",
+  "@enterYourPhoneNumber": {},
+  "etb": "ብር",
+  "@etb": {
+    "type": "text"
+  },
+  "etb_": "ኢ.ቲ.ቢ ",
+  "@etb_": {
+    "type": "text"
+  },
+  "etb_ethiopian_birr_": "ETB (የኢትዮጵያ ብር)",
+  "@etb_ethiopian_birr_": {},
+  "expiry_date": "የሚያበቃበት ቀን",
+  "@expiry_date": {
+    "type": "text"
+  },
+  "explore_products": "ምርቶችን ያስሱ",
+  "@explore_products": {
+    "type": "text"
+  },
+  "export_data": "ውሂብ ወደ ውጭ ይላኩ",
+  "@export_data": {},
+  "faqs_tutorials": "ተዘውትረው የሚጠየቁ ጥያቄዎች",
+  "@faqs_tutorials": {},
+  "filter": "ማጣሪያ",
+  "@filter": {},
+  "finances": "ፋይናንስ",
+  "@finances": {},
+  "forget_password": "የይለፍ ቃል እርሳ",
+  "@forget_password": {
+    "type": "text"
+  },
+  "forgotPassword": "የይለፍ ቃል ረሱ?",
+  "@forgotPassword": {},
+  "fri": "ዓርብ",
+  "@fri": {
+    "type": "text"
+  },
+  "general_settings": "አጠቃላይ ቅንብሮች",
+  "@general_settings": {},
+  "gifts_cards": "የስጦታ ካርዶች",
+  "@gifts_cards": {},
+  "go_back": "ተመለስ",
+  "@go_back": {
+    "type": "text"
+  },
+  "help_center": "የእገዛ ማዕከል",
+  "@help_center": {},
+  "image_url": "የምስል URL",
+  "@image_url": {
+    "type": "text"
+  },
+  "integrations_export": "ውህደቶች",
+  "@integrations_export": {},
+  "inventory": "ዕቃ ዝርዝር",
+  "@inventory": {
+    "type": "text"
+  },
+  "inventory_management": "የፍትህ ማኔጅመንት",
+  "@inventory_management": {},
+  "items_expiring": "ዕቃዎች ያበቃል",
+  "@items_expiring": {},
+  "item_x": "ንጥል X",
+  "@item_x": {
+    "type": "text"
+  },
+  "last_backup_never": "የመጨረሻው ምትኬ: በጭራሽ",
+  "@last_backup_never": {},
+  "light": "ብርሃን",
+  "@light": {},
+  "login": "ግባ",
+  "@login": {
+    "type": "text"
+  },
+  "logout": "ውጣ",
+  "@logout": {},
+  "low_stock_items": "ዝቅተኛ የአክሲዮን እቃዎች",
+  "@low_stock_items": {},
+  "low_stock_threshold": "ዝቅተኛ የአክሲዮን ደረጃ",
+  "@low_stock_threshold": {},
+  "mon": "ሰኞ",
+  "@mon": {
+    "type": "text"
+  },
+  "my_pharmacy_store": "የእኔ የመድኃኒት ሱቅ",
+  "@my_pharmacy_store": {},
+  "new_order": "አዲስ ትዕዛዝ",
+  "@new_order": {},
+  "no_orders_found": "ምንም ትዕዛዞች አልተገኙም።",
+  "@no_orders_found": {
+    "type": "text"
+  },
+  "not_connected": "አልተገናኘም",
+  "@not_connected": {},
+  "notifications": "ማሳወቂያዎች",
+  "@notifications": {},
+  "ok": "እሺ",
+  "@ok": {
+    "type": "text"
+  },
+  "or": "ወይም",
+  "@or": {},
+  "orders": "ትዕዛዞች",
+  "@orders": {
+    "type": "text"
+  },
+  "otp_verification_failed": "የኦቲፒ ማረጋገጫ አልተሳካም።",
+  "@otp_verification_failed": {
+    "type": "text"
+  },
+  "out": "ወጣ",
+  "@out": {
+    "type": "text"
+  },
+  "password": "የይለፍ ቃል",
+  "@password": {},
+  "password_has_been_reset_successfully": "የይለፍ ቃል በተሳካ ሁኔታ ዳግም ተቀናብሯል።",
+  "@password_has_been_reset_successfully": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long": "የይለፍ ቃል ቢያንስ 8 ቁምፊዎች መሆን አለበት።",
+  "@password_must_be_at_least_8_characters_long": {
+    "type": "text"
+  },
+  "password_must_be_at_least_8_characters_long_": "የይለፍ ቃል ቢያንስ 8 ቁምፊዎች መሆን አለበት።",
+  "@password_must_be_at_least_8_characters_long_": {
+    "type": "text"
+  },
+  "passwords_do_not_match": "የይለፍ ቃሎች አይዛመዱም።",
+  "@passwords_do_not_match": {
+    "type": "text"
+  },
+  "payment_methods": "የክፍያ ዘዴዎች",
+  "@payment_methods": {},
+  "per_unit": " በአንድ ክፍል",
+  "@per_unit": {
+    "type": "text"
+  },
+  "phone": "ስልክ",
+  "@phone": {
+    "type": "text"
+  },
+  "phoneNumber": "ስልክ",
+  "@phoneNumber": {},
+  "pleaseEnterYourCredentials": "እባክዎ ምስክርነቶችዎን ያስገቡ",
+  "@pleaseEnterYourCredentials": {
+    "type": "text"
+  },
+  "please_enter_your_username_to_reset_your_password": "እባክዎ የይለፍ ቃልዎን እንደገና ለማስጀመር የተጠቃሚ ስምዎን ያስገቡ",
+  "@please_enter_your_username_to_reset_your_password": {},
+  "please_use_the_new_password_when_logging_in": "እባክዎ ሲገቡ አዲሱን የይለፍ ቃል ይጠቀሙ",
+  "@please_use_the_new_password_when_logging_in": {
+    "type": "text"
+  },
+  "pos_integration": "የ POS ውህደት",
+  "@pos_integration": {},
+  "privacy_policy_terms": "የግላዊነት ፖሊሲ",
+  "@privacy_policy_terms": {},
+  "product": "ምርት",
+  "@product": {
+    "type": "text"
+  },
+  "product_code": "የምርት ኮድ",
+  "@product_code": {
+    "type": "text"
+  },
+  "product_description": "የምርት መግለጫ",
+  "@product_description": {
+    "type": "text"
+  },
+  "products": "ምርቶች",
+  "@products": {},
+  "products_list": "ምርቶች ዝርዝር",
+  "@products_list": {
+    "type": "text"
+  },
+  "purchase_orders": "የግዢ ትዕዛዞች",
+  "@purchase_orders": {
+    "type": "text"
+  },
+  "purchase_price": "የግዢ ዋጋ",
+  "@purchase_price": {
+    "type": "text"
+  },
+  "reports_and_analytics": "ሪፖርቶች እና ትንታኔዎች",
+  "@reports_and_analytics": {},
+  "re_send_a_code_in": "ኮድ ወደ ውስጥ እንደገና ላክ",
+  "@re_send_a_code_in": {
+    "type": "text"
+  },
+  "re_send_code_in_": "ኮድ ወደ ውስጥ እንደገና ላክ ",
+  "@re_send_code_in_": {
+    "type": "text"
+  },
+  "reset_password": "የይለፍ ቃል ዳግም አስጀምር",
+  "@reset_password": {
+    "type": "text"
+  },
+  "revenue": "ገቢ",
+  "@revenue": {},
+  "sale_distribution": "የሽያጭ ስርጭት",
+  "@sale_distribution": {
+    "type": "text"
+  },
+  "sales": "ሽያጮች",
+  "@sales": {},
+  "sales_logged": "ሽያጮች ገብተዋል",
+  "@sales_logged": {},
+  "sales_orders": "የሽያጭ ትዕዛዞች",
+  "@sales_orders": {
+    "type": "text"
+  },
+  "sat": "ቅዳሜ",
+  "@sat": {
+    "type": "text"
+  },
+  "save": "አስቀምጥ",
+  "@save": {
+    "type": "text"
+  },
+  "save_changes": "ለውጦችን ይቆጥቡ",
+  "@save_changes": {},
+  "scan_qr_code": "የQR ኮድ ይቃኙ",
+  "@scan_qr_code": {
+    "type": "text"
+  },
+  "search": "ፍለጋ",
+  "@search": {},
+  "select_date_range": "የቀን ክልልን ይምረጡ",
+  "@select_date_range": {
+    "type": "text"
+  },
+  "select_theme": "ጭብጥ ይምረጡ",
+  "@select_theme": {},
+  "selling_price": "የመሸጫ ዋጋ",
+  "@selling_price": {
+    "type": "text"
+  },
+  "send": "ላክ",
+  "@send": {
+    "type": "text"
+  },
+  "settings": "ቅንብሮች",
+  "@settings": {},
+  "share": "አጋራ",
+  "@share": {
+    "type": "text"
+  },
+  "sign_out_of_your_account": "ከመለያዎ መውጣት",
+  "@sign_out_of_your_account": {},
+  "signUp": "ይመዝገቡ",
+  "@signUp": {},
+  "signupDescription": "ለመቀጠል እባክዎ ዝርዝሩን ከዚህ በታች ያስገቡ።",
+  "@signupDescription": {},
+  "signupTitle": "እንመዘገብህ",
+  "@signupTitle": {},
+  "stock_in_hand": "አክሲዮን በእጅ",
+  "@stock_in_hand": {
+    "type": "text"
+  },
+  "stock_quantity": "የአክሲዮን ብዛት",
+  "@stock_quantity": {
+    "type": "text"
+  },
+  "stores": "መደብሮች",
+  "@stores": {},
+  "submit": "ያስገቡ",
+  "@submit": {},
+  "subtitle": "ንዑስ ርዕስ",
+  "@subtitle": {
+    "type": "text"
+  },
+  "summary": "ማጠቃለያ",
+  "@summary": {
+    "type": "text"
+  },
+  "sun": "እሑድ",
+  "@sun": {
+    "type": "text"
+  },
+  "supplier": "አቅራቢ",
+  "@supplier": {
+    "type": "text"
+  },
+  "support_about": "ድጋፍ",
+  "@support_about": {},
+  "switch_business": "ንግድ ስራ",
+  "@switch_business": {},
+  "system_default": "ስርዓት ነባሪ",
+  "@system_default": {},
+  "this_month": "በዚህ ወር",
+  "@this_month": {
+    "type": "text"
+  },
+  "this_week": "በዚህ ሳምንት",
+  "@this_week": {
+    "type": "text"
+  },
+  "this_year": "በዚህ አመት",
+  "@this_year": {
+    "type": "text"
+  },
+  "thu": "ሐሙስ",
+  "@thu": {
+    "type": "text"
+  },
+  "title": "ርዕስ",
+  "@title": {
+    "type": "text"
+  },
+  "today": "ዛሬ",
+  "@today": {
+    "type": "text"
+  },
+  "today_s_best_seller": "የዛሬው ምርጥ ሻጭ",
+  "@today_s_best_seller": {
+    "type": "text"
+  },
+  "total_orders": "ጠቅላላ ትዕዛዞች",
+  "@total_orders": {},
+  "total_products": "ጠቅላላ ምርቶች",
+  "@total_products": {
+    "type": "text"
+  },
+  "total_value": "ጠቅላላ እሴት",
+  "@total_value": {},
+  "tue": "ማክሰኞ",
+  "@tue": {
+    "type": "text"
+  },
+  "two_factor_authentication": "ሁለት-ደረጃ ማረጋገጫ",
+  "@two_factor_authentication": {},
+  "unit": "ክፍል",
+  "@unit": {
+    "type": "text"
+  },
+  "update_your_login_credentials": "የመግቢያ መረጃዎችዎን ያዘምኑ",
+  "@update_your_login_credentials": {},
+  "user_preferences": "የተጠቃሚ ምርጫዎች",
+  "@user_preferences": {},
+  "user_profile": "የተጠቃሚ መገለጫ",
+  "@user_profile": {},
+  "verification": "ማረጋገጥ",
+  "@verification": {
+    "type": "text"
+  },
+  "view_and_edit_your_profile": "መገለጫዎን ይመልከቱ እና ያርትዑ",
+  "@view_and_edit_your_profile": {},
+  "view_legal_documents": "የሕግ ሰነዶችን ይመልከቱ",
+  "@view_legal_documents": {},
+  "view_more": "ተጨማሪ ይመልከቱ",
+  "@view_more": {
+    "type": "text"
+  },
+  "wed": "ረቡዕ",
+  "@wed": {
+    "type": "text"
+  },
+  "welcomeMessage": "እንኳን ደህና መጣህ!",
+  "@welcomeMessage": {
+    "type": "text"
+  },
+  "we_send_a_code_to": "የማረጋገጫ ኮዱን ወደ አንተ ልከናል። ",
+  "@we_send_a_code_to": {
+    "type": "text"
+  }
+}

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
 import 'package:gcpro/features/auth/presentation/widgets/signup_form.dart';
 import 'package:gcpro/features/splash/presentation/widgets/sign_up_buttons.dart';
 import 'package:gcpro/gen/assets.gen.dart';
-import 'package:gcpro/l10n/app_localizations.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/routes/app_route.gr.dart';
 
 import 'package:gcpro/shared/widgets/or_splitter.dart';
@@ -29,7 +29,7 @@ class SignUpScreenMobile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          l10n!.signupTitle,
+          l10n.signupTitle,
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),

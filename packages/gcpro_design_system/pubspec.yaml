@@ -1,6 +1,7 @@
 name: gcpro_design_system
 description: "Gcpro Design System"
 version: 0.0.1
+# homepage:
 
 environment:
   sdk: ^3.6.0

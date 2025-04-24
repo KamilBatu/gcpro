@@ -1,6 +1,6 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gcpro_design_system/tokens/colors.dart';
 
 class RadioOption<T> extends ConsumerWidget {
   const RadioOption({

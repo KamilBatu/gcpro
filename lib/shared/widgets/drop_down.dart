@@ -1,6 +1,8 @@
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/gen/l10n.dart';
+import 'package:gcpro/shared/mixins/localization_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
 
 class CustomDropDown extends StatefulWidget {
   const CustomDropDown({
@@ -9,7 +11,7 @@ class CustomDropDown extends StatefulWidget {
     required this.defaultOption,
     super.key,
     this.backgroundColor = kColorSchemeSeed,
-    this.minWidth = 120,
+    this.minWidth = 150,
   });
   final List<String> options;
   final String defaultOption;
@@ -51,9 +53,8 @@ class CustomDropDownState extends State<CustomDropDown> {
               (index) {
                 return ListTile(
                   dense: true,
-                  selectedTileColor: widget.backgroundColor.withValues(
-                    alpha: 0.15,
-                  ),
+                  selectedTileColor:
+                      widget.backgroundColor.withValues(alpha: 0.15),
                   selected: _selectedItem == widget.options[index],
                   visualDensity: const VisualDensity(
                     vertical: VisualDensity.minimumDensity,
@@ -67,7 +68,9 @@ class CustomDropDownState extends State<CustomDropDown> {
                         )
                       : null,
                   title: Text(
-                    widget.options[index],
+                    AppLocalizations.of(context)
+                            .getRange(widget.options[index]) ??
+                        widget.options[index],
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: _selectedItem == widget.options[index]
@@ -100,6 +103,12 @@ class CustomDropDownState extends State<CustomDropDown> {
 
   @override
   Widget build(BuildContext context) {
+    const languageMap = {
+      'en': 'English',
+      'om': 'Oromo',
+      'am': 'Amharic',
+    };
+
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -132,7 +141,8 @@ class CustomDropDownState extends State<CustomDropDown> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                _selectedItem,
+                AppLocalizations.of(context).getFiltterLable(_selectedItem) ??
+                    widget.defaultOption,
                 style: TextStyle(
                   color: _isTapped
                       ? widget.backgroundColor

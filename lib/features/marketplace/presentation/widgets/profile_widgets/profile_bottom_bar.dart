@@ -1,3 +1,7 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
+import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/actionbutton_iconsbutton.dart';
+import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 
 class ProfileBottomBar extends StatelessWidget {
@@ -14,37 +18,43 @@ class ProfileBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.store, size: iconSize),
-          label: 'Market',
-          backgroundColor: Colors.black12,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Container(
+          width: MediaQuery.sizeOf(context).width * 0.60,
+          child: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home, size: iconSize),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag, size: iconSize),
+                label: 'All items',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.category, size: iconSize),
+                label: 'new arrivals',
+              ),
+            ],
+            currentIndex: currentIndex,
+            onTap: onTap,
+            showUnselectedLabels: true,
+            elevation: 0,
+            selectedLabelStyle: const TextStyle(fontSize: 12),
+            unselectedLabelStyle: const TextStyle(fontSize: 10),
+          ),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home, size: iconSize),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_bag, size: iconSize),
-          label: 'Item',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.category, size: iconSize),
-          label: 'Category',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.contacts, size: iconSize),
-          label: 'Contact',
-        ),
+        buildActionButton(
+            label: 'Chat Now',
+            onPressed: () {
+              context.router.navigate(const ChatRoute());
+            },
+            context: context,
+            textColor: kColorWhite,
+            heightValue: 0.05)
       ],
-      currentIndex: currentIndex,
-      onTap: onTap,
-      showUnselectedLabels: true,
-      elevation: 0,
-      selectedLabelStyle: const TextStyle(fontSize: 12),
-      unselectedLabelStyle: const TextStyle(fontSize: 10),
-      type: BottomNavigationBarType.fixed,
     );
   }
 }

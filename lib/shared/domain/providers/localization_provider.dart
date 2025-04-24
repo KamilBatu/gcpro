@@ -1,3 +1,4 @@
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/shared/data/local/secured_storage_service.dart';
 import 'package:gcpro/shared/domain/providers/secured_storage_service_provider.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ class LocalizationNotifier extends StateNotifier<Locale> {
 
   Future<void> updateLocale(Locale newLocale) async {
     state = newLocale;
+    await AppLocalizations.delegate.load(newLocale);
+
     await _storageService.set('locale', newLocale.languageCode);
   }
 }

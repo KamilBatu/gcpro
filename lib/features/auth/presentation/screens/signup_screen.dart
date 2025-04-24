@@ -17,7 +17,7 @@ class SignupScreen extends ConsumerWidget {
         backgroundColor: Theme.of(context).colorScheme.surface,
         toolbarHeight: 50,
         actions: const [
-          ChooseLocalization(),
+          // ChooseLocalization(),
           Gap(12),
         ],
       ),
@@ -27,7 +27,6 @@ class SignupScreen extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [SignupForm()],
-            //
           ),
         ),
       ),

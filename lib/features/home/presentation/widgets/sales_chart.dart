@@ -1,5 +1,6 @@
-import 'package:gcpro_design_system/gcpro_design_sysytem.dart';
+import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/features/home/presentation/providers/home_provider.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/shared/widgets/drop_down.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -24,13 +25,20 @@ class SalesChartCard extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Sale Distribution",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context).sale_distribution,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               CustomDropDown(
                 defaultOption: salesDistributionDuration,
-                options: const ["This Week", "This Month", "This Year"],
+                options: const [
+                  "this_week",
+                  "this_month",
+                  "this_year",
+                ],
                 onChanged: (value) {
                   ref
                       .read(salesDurationDistribution.notifier)
@@ -78,13 +86,13 @@ class SalesChartCard extends ConsumerWidget {
                       showTitles: true,
                       getTitlesWidget: (value, meta) {
                         final List<String> days = [
-                          "Mon",
-                          "Tue",
-                          "Wed",
-                          "Thu",
-                          "Fri",
-                          "Sat",
-                          "Sun",
+                          AppLocalizations.of(context).mon,
+                          AppLocalizations.of(context).tue,
+                          AppLocalizations.of(context).wed,
+                          AppLocalizations.of(context).thu,
+                          AppLocalizations.of(context).fri,
+                          AppLocalizations.of(context).sat,
+                          AppLocalizations.of(context).sun,
                         ];
                         return Text(
                           days[value.toInt()],
@@ -96,9 +104,7 @@ class SalesChartCard extends ConsumerWidget {
                   rightTitles: const AxisTitles(),
                   topTitles: const AxisTitles(),
                 ),
-                barGroups: _generateBars(
-                  ref.watch(salesDistribution),
-                ),
+                barGroups: _generateBars(ref.watch(salesDistribution)),
               ),
             ),
           ),

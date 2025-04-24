@@ -1,4 +1,5 @@
 import 'package:gcpro/features/inventory/presentation/providers/state/filter_state_provider.dart';
+import 'package:gcpro/gen/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -39,8 +40,8 @@ class DateRangePickerWidgetState extends ConsumerState<DateRangePickerWidget> {
   @override
   Widget build(BuildContext context) {
     final String dateText = selectedDateRange != null
-        ? "${DateFormat('dd/MM/yyyy').format(selectedDateRange!.start)} - ${DateFormat('dd/MM/yyyy').format(selectedDateRange!.end)}"
-        : "Select Date Range";
+        ? "${DateFormat('dd/MM/yyyy', 'en_US').format(selectedDateRange!.start)} - ${DateFormat('dd/MM/yyyy', 'en_US').format(selectedDateRange!.end)}"
+        : AppLocalizations.of(context).select_date_range;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
