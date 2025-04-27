@@ -97,6 +97,7 @@ class MarketplaceCartScreen extends ConsumerWidget {
             builder: (context) => LoadingSpinner(),
           );
           await Future.delayed(Duration(seconds: 1));
+          Navigator.of(context).pop();
           showConfirmationBottomSheet(context);
         },
         cartCount: 2,

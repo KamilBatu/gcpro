@@ -22,20 +22,6 @@ class CartNotifier extends StateNotifier<Cart> {
                 ),
                 singleCartPrice: 120,
               ),
-              CartItem(
-                id: 1,
-                product: Product(
-                  id: 2,
-                  name: "PainRelief Plus",
-                  price: 12.99,
-                  description:
-                      "Fast-acting pain reliever for headaches and muscle pain",
-                  rating: 4.3,
-                  imageUrl: "assets/images/placeholders/m2.jpg",
-                  category: Category(id: 1),
-                ),
-                singleCartPrice: 120,
-              )
             ],
           ),
         );

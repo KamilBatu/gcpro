@@ -56,6 +56,13 @@ class LoginMobileLayout extends StatelessWidget {
           onSaved: params.onLogin,
         ),
         const Gap(16),
+        TextButton(
+            onPressed: () =>
+                AutoRouter.of(context).push(const ForgetPasswordRoute()),
+            child: Text(
+              'forget password',
+              style: Theme.of(context).textTheme.bodySmall,
+            )),
         // Display Multiple Error Messages
         if (params.errorMessages.isNotEmpty) ...[
           ...params.errorMessages.map(
@@ -81,6 +88,7 @@ class LoginMobileLayout extends StatelessWidget {
           onPressed: params.onLogin,
         ),
         const OrSplitter(vertical: 18),
+
         CustomOutlinedButton(
           icon: Assets.images.google.image(),
           onPressed: () {},

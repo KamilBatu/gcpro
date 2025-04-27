@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:gcpro/features/marketplace/presentation/providers/marketplace_cart_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/badge_cart_icon.dart';
+import 'package:gcpro/features/marketplace/presentation/widgets/show_bottom_sheet_action.dart';
 import 'package:gcpro_design_system/tokens/colors.dart';
 import 'package:gcpro/features/marketplace/domain/entities/product_entity.dart';
 import 'package:gcpro/features/marketplace/presentation/providers/marketplace_product_provider.dart';
@@ -220,7 +221,13 @@ class BuildRelatedProduct extends ConsumerWidget {
                           buildActionButton(
                             label: 'Add to cart',
                             isOutlined: true,
-                            onPressed: () {},
+                            onPressed: () {
+                              showBottomSheets(
+                                context: context,
+                                product: products[index],
+                                isBuyNow: false,
+                              );
+                            },
                             context: context,
                             textColor: kColorSchemeSeed,
                           ),

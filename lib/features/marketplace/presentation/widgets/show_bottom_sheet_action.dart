@@ -1,9 +1,6 @@
-import 'package:gcpro_design_system/tokens/colors.dart';
-import 'package:gcpro_design_system/widgets/loading_spinner.dart';
 import 'package:gcpro/features/marketplace/domain/entities/product_entity.dart';
 import 'package:gcpro/features/marketplace/presentation/providers/marketplace_cart_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/providers/text_controller_provider.dart';
-import 'package:gcpro/features/marketplace/presentation/providers/toggle_provider.dart';
 import 'package:gcpro/features/marketplace/presentation/widgets/reusable_widgets/quantity_selecter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,7 +20,7 @@ void showBottomSheets({
           final text = ref.watch(textControllerProvider(product.id));
 
           return Container(
-            height: MediaQuery.of(context).size.height * 0.75,
+            height: MediaQuery.of(context).size.height * 0.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,6 +35,17 @@ void showBottomSheets({
                           .read(marketPlaceCartProvider.notifier)
                           .addToCart(product, quantity, ref: ref);
                       Navigator.of(context).pop();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          duration: Duration(seconds: 2),
+                          content: Text(
+                              'successfully Added $quantity items to cart'),
+                          action: SnackBarAction(
+                            label: 'Undo',
+                            onPressed: () {},
+                          ),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 50),

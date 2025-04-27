@@ -18,23 +18,24 @@ class OnboardingScreenData {
 
 const List<OnboardingScreenData> onboardingData = [
   OnboardingScreenData(
-    title: 'Get your',
-    subTitle: 'Dream Job',
-    description: 'Effortless inventory management for your business.',
+    title: 'Streamline',
+    subTitle: 'Your Pharmacy',
+    description:
+        'Effortless inventory management for pharmacies and wholesalers. Track stock, manage orders, and optimize supply chains with ease.',
     image: 'assets/images/onboarding1.png',
   ),
   OnboardingScreenData(
-    title: 'Entertainment',
-    subTitle: 'Stream & Chat',
+    title: 'Connect',
+    subTitle: 'With Suppliers',
     description:
-        'Dive into the ultimate entertainment experience with our live chat and streaming platform!',
+        'Seamlessly connect with trusted pharmacy wholesalers. Access real-time pricing, order updates, and exclusive deals on medications and supplies.',
     image: 'assets/images/onboarding2.png',
   ),
   OnboardingScreenData(
-    title: 'Elevate your',
-    subTitle: 'Business',
+    title: 'Grow Your',
+    subTitle: 'Pharmacy Business',
     description:
-        'Elevate your business to new heights with our tailored promotional strategies! Reach your target audience, boost your brand visibility, and drive growth like never before—let us help you turn potential into profit.',
+        'Boost your pharmacy’s success with tailored analytics and insights. Enhance customer satisfaction, optimize operations, and drive profitability.',
     image: 'assets/images/onboarding3.png',
   ),
 ];

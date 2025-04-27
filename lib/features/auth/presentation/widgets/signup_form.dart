@@ -3,7 +3,6 @@ import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro/features/auth/presentation/providers/state/auth_state.dart';
 import 'package:gcpro/features/auth/presentation/screens/orientations/signup_mobile.dart';
 import 'package:gcpro/gen/l10n.dart';
-
 import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:gcpro/shared/domain/providers/username_type_provider.dart';
 import 'package:gcpro/shared/globals.dart';
@@ -46,43 +45,6 @@ class SignupFormState extends ConsumerState<SignupForm> {
   }
 
   String? validateConfirmPassword(String? password) {
-    if (password == null) {
-      addError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-      return "";
-    } else {
-      removeError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-    }
-    if (password.isEmpty) {
-      addError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-      return "";
-    } else {
-      removeError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-    }
-    if (password.length < 8) {
-      addError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-      return "";
-    } else {
-      removeError(
-        AppLocalizations.of(context)
-            .password_must_be_at_least_8_characters_long,
-      );
-    }
-
     if (password != passwordController.text) {
       addError(AppLocalizations.of(context).passwords_do_not_match);
       return "";
@@ -93,6 +55,11 @@ class SignupFormState extends ConsumerState<SignupForm> {
   }
 
   void onSignup() {
+    if (confirmPasswordController.text != passwordController.text) {
+      addError(AppLocalizations.of(context).passwords_do_not_match);
+    } else {
+      removeError(AppLocalizations.of(context).passwords_do_not_match);
+    }
     if (passwordController.text.isEmpty) {
       addError(
         AppLocalizations.of(context)
@@ -213,6 +180,7 @@ class SignupParams {
     required this.validatePassword,
     required this.validateConfirmPassword,
   });
+
   final TextEditingController usernameController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
