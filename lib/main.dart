@@ -20,7 +20,7 @@ Future<void> mainCommon(AppEnvironment environment) async {
       //   enabled: kIsDesktop,
       //   availableLocales: AppLocalizations.supportedLocales,
       // ),
-      child: const BitaApp(),
+      child: const GcProApp(),
     ),
   );
 }

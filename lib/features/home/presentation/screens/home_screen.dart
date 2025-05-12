@@ -4,7 +4,6 @@ import 'package:gcpro/features/dashboard/presentation/screens/dashboard_screen.d
 import 'package:gcpro/features/home/presentation/providers/home_provider.dart';
 import 'package:gcpro/features/home/presentation/providers/state/account_state.dart';
 import 'package:gcpro/features/home/presentation/screens/home_mobile_screen.dart';
-import 'package:gcpro/routes/app_route.gr.dart';
 
 import 'package:gcpro/shared/utils/responsive/screen_type_layout.dart';
 import 'package:gcpro/shared/widgets/account_drop_down.dart';

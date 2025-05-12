@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gcpro/features/auth/presentation/providers/auth_providers.dart';
 import 'package:gcpro_design_system/gcpro_design_system.dart';
 import 'package:gcpro/gen/l10n.dart';
 import 'package:gcpro/l10n/string_hardcoded.dart';
@@ -6,11 +8,11 @@ import 'package:gcpro/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class BitaDrawer extends StatelessWidget {
+class BitaDrawer extends ConsumerWidget {
   const BitaDrawer({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Drawer(
       width: MediaQuery.of(context).size.width * 0.75,
       shape: const RoundedRectangleBorder(
@@ -106,6 +108,7 @@ class BitaDrawer extends StatelessWidget {
                     DrawerItem(
                       icon: Icons.logout,
                       text: AppLocalizations.of(context).logout.hardcoded,
+                      onTap: () => context.router.replace(LoginRoute()),
                     ),
                   ],
                 ),

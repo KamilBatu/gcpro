@@ -71,11 +71,13 @@ class LoginFormState extends ConsumerState<LoginForm> {
 
     if (errorMessages.isNotEmpty) return;
 
-    ref.read(authNotifierProvider.notifier).otpSend(
-          value: usernameController.text,
-          identifier: AppLocalizations.of(context).email,
-          otpType: OTPType.TWO_FACTOR_AUTHENTICATION,
-        );
+    ref.read(authNotifierProvider.notifier).loginUser(usernameController.text,
+        passwordController.text, ref.read(usernameTypeProvider));
+    // otpSend(
+    //       value: usernameController.text,
+    //       identifier: AppLocalizations.of(context).email,
+    //       otpType: OTPType.TWO_FACTOR_AUTHENTICATION,
+    //     );
   }
 
   @override

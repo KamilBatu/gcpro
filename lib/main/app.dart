@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BitaApp extends ConsumerWidget {
-  const BitaApp({super.key});
+class GcProApp extends ConsumerWidget {
+  const GcProApp({super.key});
 
   static AppRouter appRouter = AppRouter();
 
@@ -18,7 +18,7 @@ class BitaApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeProvider);
     return MaterialApp.router(
-      title: 'Bita Mobile App',
+      title: 'gc project',
       theme: kLightMaterialAppTheme,
       darkTheme: kDarkMaterialAppTheme,
       routeInformationParser: appRouter.defaultRouteParser(),
